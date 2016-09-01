@@ -21,6 +21,8 @@
         <activity android:name=".Problem01_ImageActivity" />
         <activity android:name=".Problem02_GlideActivity" />
         <activity android:name=".Problem03_SlidingConflictActivity" />
+        <activity android:name=".Problem04_ShapeSourceActivity" />
+
     </application>
 
 </manifest>

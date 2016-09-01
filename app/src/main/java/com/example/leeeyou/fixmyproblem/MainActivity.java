@@ -38,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btn_problem_04 = (Button) findViewById(R.id.btn_problem_04);
+        btn_problem_04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Problem04_ShapeSourceActivity.class));
+            }
+        });
+
 
     }
 

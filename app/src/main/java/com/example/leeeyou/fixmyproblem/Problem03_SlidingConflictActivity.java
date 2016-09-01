@@ -22,11 +22,11 @@ public class Problem03_SlidingConflictActivity extends AppCompatActivity {
 
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("titleA", PageFragment.class)
-                .add("titleB", PageFragment.class)
-                .add("titleC", PageFragment.class)
-                .add("titleD", PageFragment.class)
-                .add("titleE", PageSlidingConflictFragment.class)
+                .add("title_A", PageFragment.class)
+                .add("title_B", PageFragment.class)
+                .add("title_C", PageFragment.class)
+                .add("title_D", PageFragment.class)
+                .add("title_E", PageSlidingConflictFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);

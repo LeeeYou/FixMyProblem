@@ -32,5 +32,12 @@
             android:layout_height="48dp"
             android:gravity="center"
             android:text="Problem03_Slideing_Conflict" />
+
+        <Button
+            android:id="@+id/btn_problem_04"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="Problem04_Shape_SOURCE" />
     </LinearLayout>
 </ScrollView>
