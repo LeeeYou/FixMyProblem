@@ -50,6 +50,14 @@
             android:text="半圆角矩形,带按下效果" />
 
         <Button
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/ripple_half_rect_stroke_blue"
+            android:padding="10dp"
+            android:text="半圆角矩形,带 ripple 按下效果" />
+
+        <Button
             android:layout_width="250dp"
             android:layout_height="48dp"
             android:layout_margin="10dp"
