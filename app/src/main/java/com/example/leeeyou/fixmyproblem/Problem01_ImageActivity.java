@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
+/**
+ * ImageView background和src体会
+ */
 public class Problem01_ImageActivity extends AppCompatActivity {
 
     @Override

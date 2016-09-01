@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="185dp"
+    android:layout_height="60dp"
+    android:background="@drawable/border_sina_sport"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_line1"
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="52dp"
+        android:layout_marginTop="10dp"
+        android:background="#b5b4b9" />
+
+    <View
+        android:id="@+id/view_line2"
+        android:layout_width="155dp"
+        android:layout_height="0.5dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/view_line1"
+        android:background="#b5b4b9" />
+
+    <View
+        android:id="@+id/view_dot"
+        android:layout_width="1px"
+        android:layout_height="1px"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/img_team1_pic"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_above="@+id/view_line2"
+        android:layout_alignBottom="@+id/view_line2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/view_dot"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/bg_default_badge" />
+
+    <TextView
+        android:id="@+id/item_team1_name"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/view_line2"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/img_team1_pic"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="--"
+        android:textColor="#2d2d37"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_team1_score"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/view_line2"
+        android:layout_alignRight="@id/view_line1"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:text="--"
+        android:textColor="#2d2d37"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/img_team2_pic"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/view_line2"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/bg_default_badge" />
+
+    <TextView
+        android:id="@+id/item_team2_name"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_line2"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/img_team1_pic"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="--"
+        android:textColor="#2d2d37"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_team2_score"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignRight="@id/view_line1"
+        android:layout_below="@id/view_line2"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:text="--"
+        android:textColor="#2d2d37"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@id/view_line2"
+        android:gravity="center"
+        android:text="--"
+        android:textColor="@color/light_txt_gray"
+        android:textSize="10sp" />
+
+</RelativeLayout>

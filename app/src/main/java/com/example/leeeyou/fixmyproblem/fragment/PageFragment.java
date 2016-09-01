@@ -11,6 +11,8 @@ import com.example.leeeyou.fixmyproblem.R;
 
 /**
  * Created by leeeyou on 16/8/31.
+ * <p>
+ * 事件冲突案例默认的Fragment
  */
 public class PageFragment extends Fragment {
 

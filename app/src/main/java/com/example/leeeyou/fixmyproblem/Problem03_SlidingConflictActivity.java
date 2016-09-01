@@ -5,10 +5,14 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.leeeyou.fixmyproblem.fragment.PageFragment;
+import com.example.leeeyou.fixmyproblem.fragment.PageSlidingConflictFragment;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
+/**
+ * 事件冲突案例
+ */
 public class Problem03_SlidingConflictActivity extends AppCompatActivity {
 
     @Override
@@ -22,7 +26,7 @@ public class Problem03_SlidingConflictActivity extends AppCompatActivity {
                 .add("titleB", PageFragment.class)
                 .add("titleC", PageFragment.class)
                 .add("titleD", PageFragment.class)
-                .add("titleE", PageFragment.class)
+                .add("titleE", PageSlidingConflictFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);

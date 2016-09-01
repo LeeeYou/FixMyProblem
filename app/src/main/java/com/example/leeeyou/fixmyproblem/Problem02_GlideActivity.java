@@ -15,6 +15,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 
+/**
+ * Glide 做圆形图片和圆角图片
+ */
 public class Problem02_GlideActivity extends AppCompatActivity {
 
     @Override
