@@ -35,6 +35,7 @@ public class Problem04_ShapeSourceActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        EventBus.getDefault().post(new MessageEvent("Problem04_ShapeSourceActivity"));
+        EventBus.getDefault().post(new MessageEvent("Problem04_ShapeSourceActivity 测试EventBus发送事件"));
     }
+
 }

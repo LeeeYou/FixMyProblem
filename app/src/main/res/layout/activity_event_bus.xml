@@ -13,38 +13,37 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/btn_problem_01"
+            android:id="@+id/btn_post_1"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corners_solid"
             android:gravity="center"
-            android:text="Problem01_Image" />
+            android:text="默认EventBus实例post事件" />
 
         <Button
-            android:id="@+id/btn_problem_02"
+            android:id="@+id/btn_post_2"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem02_Glide" />
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corners_stroke"
+            android:text="注册自定义EventBus实例" />
 
         <Button
-            android:id="@+id/btn_problem_03"
+            android:id="@+id/btn_post_3"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem03_Slideing_Conflict" />
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corners_stroke"
+            android:text="自定义EventBus实例post粘性事件" />
 
         <Button
-            android:id="@+id/btn_problem_04"
+            android:id="@+id/btn_post_4"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem04_Shape_SOURCE" />
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corners_stroke"
+            android:text="注销自定义EventBus实例" />
 
-        <Button
-            android:id="@+id/btn_problem_05"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem05_EventBus" />
     </LinearLayout>
 </ScrollView>

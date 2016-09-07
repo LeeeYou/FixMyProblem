@@ -6,6 +6,7 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -22,6 +23,7 @@
         <activity android:name=".Problem02_GlideActivity" />
         <activity android:name=".Problem03_SlidingConflictActivity" />
         <activity android:name=".Problem04_ShapeSourceActivity" />
+        <activity android:name=".Problem05_EventBusActivity" />
 
     </application>
 
