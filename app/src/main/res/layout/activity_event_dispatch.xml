@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <com.example.leeeyou.fixmyproblem.custom_view.OuterLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.example.leeeyou.fixmyproblem.custom_view.InnerLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.example.leeeyou.fixmyproblem.custom_view.MyButton
+                android:id="@+id/btn_1"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_corners_solid"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="正常的传递顺序" />
+
+        </com.example.leeeyou.fixmyproblem.custom_view.InnerLayout>
+
+
+        <Button
+            android:id="@+id/btn_post_2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corners_stroke"
+            android:padding="5dp"
+            android:text="requestDisallowInterceptTouchEvent" />
+
+        <Button
+            android:id="@+id/btn_post_3"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corners_stroke"
+            android:text="onTouch事件" />
+
+        <Button
+            android:id="@+id/btn_post_4"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corners_stroke"
+            android:text="注销自定义EventBus实例" />
+
+    </com.example.leeeyou.fixmyproblem.custom_view.OuterLayout>
+</ScrollView>

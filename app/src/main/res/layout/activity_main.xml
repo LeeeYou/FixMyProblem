@@ -17,34 +17,47 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:gravity="center"
-            android:text="Problem01_Image" />
+            android:text="Problem01_Image"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_problem_02"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:gravity="center"
-            android:text="Problem02_Glide" />
+            android:text="Problem02_Glide"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_problem_03"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:gravity="center"
-            android:text="Problem03_Slideing_Conflict" />
+            android:text="Problem03_Slideing_Conflict"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_problem_04"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:gravity="center"
-            android:text="Problem04_Shape_SOURCE" />
+            android:text="Problem04_Shape_SOURCE"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_problem_05"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:gravity="center"
-            android:text="Problem05_EventBus" />
+            android:text="Problem05_EventBus"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_problem_06"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="Problem06_EventDispath"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
