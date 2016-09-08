@@ -22,25 +22,50 @@ public class OuterLayout extends LinearLayout {
         super(context, attrs, defStyleAttr);
     }
 
+    /*体验事件的完整传递顺序。onInterceptTouchEvent return false; onTouchEvent return false;*/
+
+//    @Override
+//    public boolean dispatchTouchEvent(MotionEvent ev) {
+//        Log.e("event dispatch", this.getClass().getSimpleName() + ".dispatchTouchEvent");
+//        return super.dispatchTouchEvent(ev);
+//    }
+//
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        Log.e("event dispatch", this.getClass().getSimpleName() + ".onInterceptTouchEvent");
+//        return false;
+//    }
+//
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        Log.e("event dispatch", this.getClass().getSimpleName() + ".onTouchEvent");
+//        return false;
+//    }
+
+
+
+
+    /*----------分隔线-----------*/
+
+
+    /*体验事件被子控件拦截传递顺序。*/
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         Log.e("event dispatch", this.getClass().getSimpleName() + ".dispatchTouchEvent");
-//        return false;
         return super.dispatchTouchEvent(ev);
     }
 
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        Log.e("event dispatch", this.getClass().getSimpleName() + ".onInterceptTouchEvent");
-        return false;
-//        return super.onInterceptTouchEvent(ev);
-    }
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        Log.e("event dispatch", this.getClass().getSimpleName() + ".onInterceptTouchEvent");
+//        return true;
+//    }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        Log.e("event dispatch", this.getClass().getSimpleName() + ".onTouchEvent");
-        return false;
-//        return super.onTouchEvent(event);
-    }
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        Log.e("event dispatch", this.getClass().getSimpleName() + ".onTouchEvent");
+//        return true;
+//    }
 
 }
