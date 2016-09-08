@@ -1,8 +1,10 @@
 package com.example.leeeyou.fixmyproblem.custom_view;
 
 import android.content.Context;
+import android.support.v4.view.GestureDetectorCompat;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
@@ -64,9 +66,18 @@ public class InnerLayout extends LinearLayout {
         return super.dispatchTouchEvent(event);
     }
 
+    private GestureDetectorCompat simpleOnGestureListener;
+
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         Log.e("event dispatch", this.getClass().getSimpleName() + ".onInterceptTouchEvent");
+
+        if (simpleOnGestureListener == null) {
+            simpleOnGestureListener = new GestureDetectorCompat(getContext(), new MySimpleOnGestureListener());
+        }
+
+        simpleOnGestureListener.onTouchEvent(ev);
+
         return true;
     }
 
@@ -74,6 +85,40 @@ public class InnerLayout extends LinearLayout {
     public boolean onTouchEvent(MotionEvent event) {
         Log.e("event dispatch", this.getClass().getSimpleName() + ".onTouchEvent");
         return true;
+    }
+
+    private class MySimpleOnGestureListener extends GestureDetector.SimpleOnGestureListener {
+
+        @Override
+        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+            Log.e("OnGesture", "执行了 onScroll 方法");
+            return super.onScroll(e1, e2, distanceX, distanceY);
+        }
+
+        @Override
+        public boolean onDown(MotionEvent e) {
+            Log.e("OnGesture", "执行了 onDown 方法");
+            return super.onDown(e);
+        }
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent e) {
+            Log.e("OnGesture", "执行了 onSingleTapUp 方法");
+            return super.onSingleTapUp(e);
+        }
+
+        @Override
+        public void onShowPress(MotionEvent e) {
+            Log.e("OnGesture", "执行了 onShowPress 方法");
+            super.onShowPress(e);
+        }
+
+        @Override
+        public void onLongPress(MotionEvent e) {
+            Log.e("OnGesture", "执行了 onLongPress 方法");
+            super.onLongPress(e);
+        }
+
     }
 
 }

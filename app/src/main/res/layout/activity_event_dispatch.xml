@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="500dp"
     android:background="#80123bba"
-    android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -24,4 +23,13 @@
             android:text="事件传递顺序体验" />
 
     </com.example.leeeyou.fixmyproblem.custom_view.InnerLayout>
+
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_margin="10dp"
+        android:text="GesutureDetector"
+        android:textAllCaps="false" />
+
 </com.example.leeeyou.fixmyproblem.custom_view.OuterLayout>

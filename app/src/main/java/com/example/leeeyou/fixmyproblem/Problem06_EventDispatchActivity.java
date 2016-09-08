@@ -23,6 +23,15 @@ public class Problem06_EventDispatchActivity extends BaseActivity {
             }
         });
 
+        TextView btn_2 = (TextView) findViewById(R.id.btn_2);
+        btn_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
     }
 }
 
