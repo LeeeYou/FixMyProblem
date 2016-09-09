@@ -61,6 +61,14 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        Button btn_problem_07 = (Button) findViewById(R.id.btn_problem_07);
+        btn_problem_07.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Problem07_Fragment_LifeCycle_Activity.class));
+            }
+        });
+
 
     }
 

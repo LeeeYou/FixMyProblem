@@ -25,6 +25,7 @@
         <activity android:name=".Problem04_ShapeSourceActivity" />
         <activity android:name=".Problem05_EventBusActivity" />
         <activity android:name=".Problem06_EventDispatchActivity" />
+        <activity android:name=".Problem07_Fragment_LifeCycle_Activity" />
 
     </application>
 
