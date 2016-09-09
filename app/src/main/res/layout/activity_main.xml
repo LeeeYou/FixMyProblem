@@ -67,5 +67,13 @@
             android:gravity="center"
             android:text="Problem07_Fragment_LifeCycle"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_problem_08"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="Problem08_Math_Activity"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

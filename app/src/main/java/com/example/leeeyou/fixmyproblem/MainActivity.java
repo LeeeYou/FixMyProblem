@@ -69,6 +69,13 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        Button btn_problem_08 = (Button) findViewById(R.id.btn_problem_08);
+        btn_problem_08.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Problem08_Math_Activity.class));
+            }
+        });
 
     }
 

@@ -26,6 +26,7 @@
         <activity android:name=".Problem05_EventBusActivity" />
         <activity android:name=".Problem06_EventDispatchActivity" />
         <activity android:name=".Problem07_Fragment_LifeCycle_Activity" />
+        <activity android:name=".Problem08_Math_Activity" />
 
     </application>
 
