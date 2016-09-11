@@ -2,6 +2,8 @@ package com.example.leeeyou.fixmyproblem;
 
 import android.os.Bundle;
 
+import com.google.gson.Gson;
+
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
@@ -18,6 +20,17 @@ public class Problem08_Math_Activity extends BaseActivity {
         mathProcess();
 
         floatProcess();
+
+        floatToJson();
+    }
+
+    private void floatToJson() {
+        float value1 = 0.01f;
+
+        Person person = new Person();
+        person.score = value1;
+
+        System.out.println("float型转json  : " + new Gson().toJson(person));
     }
 
     private static void floatProcess() {
@@ -53,5 +66,9 @@ public class Problem08_Math_Activity extends BaseActivity {
         System.out.println("Math.round(" + value1 + ") = " + Math.round(value1));
     }
 
+    class Person {
+        public String name = "Jack";
+        public float score;
+    }
 }
 
