@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 /**
- * 事件传递
+ * Math中小数的处理
  */
 public class Problem08_Math_Activity extends BaseActivity {
 

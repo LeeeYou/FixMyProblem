@@ -8,7 +8,7 @@ import com.example.leeeyou.fixmyproblem.fragment.LifeCycle01Fragment;
 import com.example.leeeyou.fixmyproblem.fragment.LifeCycle02Fragment;
 
 /**
- * 事件传递
+ * fragment生命周期
  */
 public class Problem07_Fragment_LifeCycle_Activity extends BaseActivity {
 
