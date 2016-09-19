@@ -28,6 +28,7 @@
         <activity android:name=".Problem07_Fragment_LifeCycle_Activity" />
         <activity android:name=".Problem08_Math_Activity" />
         <activity android:name=".Problem09_ViewDragHelper_Activity" />
+        <activity android:name=".Problem10_JSONArray_Activity" />
 
     </application>
 

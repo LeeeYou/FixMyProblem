@@ -85,6 +85,14 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        Button btn_problem_10 = (Button) findViewById(R.id.btn_problem_10);
+        btn_problem_10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Problem10_JSONArray_Activity.class));
+            }
+        });
+
     }
 
 }
