@@ -1,9 +1,4 @@
 # FixMyProblem
-@(示例笔记本)[马克飞象|帮助|Markdown]
-
--------------------
-
-[TOC]
 
 ### 1、ImageView的background和src的不同
 如果两个属性同时存在,用户会看到 src 属性中设置的背景. 但同时 background 设置的背景也存在, 只是被 src 属性挡住了,在后面. src 等于是前景, background 等于是背景.background 会根据 ImageView 组件给定的长宽进行拉伸, 而 src 就存放的是原图的大小, 不会进行拉伸。src 是图片内容（前景）, bg 是背景, 可以同时使用.此外: scaleType 只对 src 起作用,比如在 ImageView 中就可以用 android:scaleType 控制图片的缩放方式 ; bg 可设置透明度.
@@ -150,9 +145,9 @@ public class Problem02_GlideActivity extends AppCompatActivity {
 
 ```
 ### 3、setCompoundDrawablesWithIntrinsicBounds的优势
-有两个方法可以设置控件的上下左右图标，分别是：
-**第一个方法**：setCompoundDrawablesWithIntrinsicBounds(Drawable left, Drawable top, Drawable right, Drawable bottom)
-**第二种方法**：setCompoundDrawables(Drawable left, Drawable top, Drawable right, Drawable bottom)
+有两个方法可以设置控件的上下左右图标，分别是：  
+**第一个方法**：setCompoundDrawablesWithIntrinsicBounds(Drawable left, Drawable top, Drawable right, Drawable bottom)  
+**第二种方法**：setCompoundDrawables(Drawable left, Drawable top, Drawable right, Drawable bottom)  
 
 它们的区别是使用第二种方法之前必须已经setBound(Rect)了，api原文如下
 > Sets the Drawables (if any) to appear to the left of, above, to the right of, and below the text. Use null if you do not want a Drawable there. The Drawables must already have had setBounds(Rect) called.
