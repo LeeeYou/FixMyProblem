@@ -170,39 +170,39 @@ public class Problem02_GlideActivity extends AppCompatActivity {
 ![](images/05_shape.png)
 
 **android:shape=["rectangle" | "oval" | "line" | "ring"]**  
-shape的形状，默认为矩形，可以设置为矩形（rectangle）、椭圆形(oval)、线性形状(line)、环形(ring)下面的属性只有在android:shape="ring时可用：
-android:innerRadius    尺寸，内环的半径。
-android:innerRadiusRatio    浮点型，以环的宽度比率来表示内环的半径，例如，如果android:innerRadiusRatio，表示内环半径等于环的宽度除以5，这个值是可以被覆盖的，默认为9.
-android:thickness    尺寸，环的厚度
-android:thicknessRatio    浮点型，以环的宽度比率来表示环的厚度，例如，如果android:thicknessRatio="2"， 那么环的厚度就等于环的宽度除以2。这个值是可以被android:thickness覆盖的，默认值是3.
-android:useLevel    boolean值，如果当做是LevelListDrawable使用时值为true，否则为false.
+shape的形状，默认为矩形，可以设置为矩形（rectangle）、椭圆形(oval)、线性形状(line)、环形(ring)下面的属性只有在android:shape="ring时可用：  
+android:innerRadius    尺寸，内环的半径。  
+android:innerRadiusRatio    浮点型，以环的宽度比率来表示内环的半径，例如，如果android:innerRadiusRatio，表示内环半径等于环的宽度除以5，这个值是可以被覆盖的，默认为9.  
+android:thickness    尺寸，环的厚度  
+android:thicknessRatio    浮点型，以环的宽度比率来表示环的厚度，例如，如果android:thicknessRatio="2"， 那么环的厚度就等于环的宽度除以2。这个值是可以被android:thickness覆盖的，默认值是3.  
+android:useLevel    boolean值，如果当做是LevelListDrawable使用时值为true，否则为false.  
 
 **corners**  
-android:radius                                 整型半径
-android:topLeftRadius                    整型左上角半径
-android:topRightRadius                  整型右上角半径
-android:bottomLeftRadius              整型左下角半径
-android:bottomRightRadius            整型右下角半径
+android:radius                                 整型半径  
+android:topLeftRadius                    整型左上角半径  
+android:topRightRadius                  整型右上角半径  
+android:bottomLeftRadius              整型左下角半径  
+android:bottomRightRadius            整型右下角半径  
 
 **渐变色**  
-android:startColor         颜色值 起始颜色
-android:endColor          颜色值结束颜色
-android:centerColor      整型渐变中间颜色，即开始颜色与结束颜色之间的颜色
-android:angle                整型渐变角度(PS:当angle=0时，渐变色是从左向右。 然后逆时针方向转，当angle=90时为从下往上。angle必须为45的整数倍)
+android:startColor         颜色值 起始颜色  
+android:endColor          颜色值结束颜色  
+android:centerColor      整型渐变中间颜色，即开始颜色与结束颜色之间的颜色  
+android:angle                整型渐变角度(PS:当angle=0时，渐变色是从左向右。 然后逆时针方向转，当angle=90时为从下往上。angle必须为45的整数倍)  
 android:type             ["linear" | "radial" | "sweep"] 渐变类型(取值：linear、radial、sweep)
                          linear 线性渐变，这是默认设置
                          radial 放射性渐变，以开始色为中心。
-                         sweep 扫描线式的渐变。
-android:useLevel             ["true" | "false"]如果要使用LevelListDrawable对象，就要设置为true。设置为true无渐变。false有渐变色
-android:gradientRadius   整型渐变色半径.当 android:type="radial" 时才使用。单独使用 android:type="radial"会报错。
-android:centerX               整型渐变中心X点坐标的相对位置
-android:centerY               整型渐变中心Y点坐标的相对位置
+                         sweep 扫描线式的渐变。  
+android:useLevel             ["true" | "false"]如果要使用LevelListDrawable对象，就要设置为true。设置为true无渐变。false有渐变色  
+android:gradientRadius   整型渐变色半径.当 android:type="radial" 时才使用。单独使用 android:type="radial"会报错。  
+android:centerX               整型渐变中心X点坐标的相对位置  
+android:centerY               整型渐变中心Y点坐标的相对位置  
 
 **描边**  
-android:width                   整型描边的宽度
-android:color                    颜色值描边的颜色
-android:dashWidth           整型表示描边的样式是虚线的宽度， 值为0时，表示为实线。值大于0则为虚线。
-android:dashGap              整型表示描边为虚线时，虚线之间的间隔 即“ - - - - ”
+android:width                   整型描边的宽度  
+android:color                    颜色值描边的颜色  
+android:dashWidth           整型表示描边的样式是虚线的宽度， 值为0时，表示为实线。值大于0则为虚线。  
+android:dashGap              整型表示描边为虚线时，虚线之间的间隔 即“ - - - - ”  
 
 
 ### 6、记录bug:Manifest merger failed error
@@ -245,11 +245,11 @@ nofityDataSetChange不成功的原因：
 
 其实好好的理解上面三条之后，解决ListView刷新不显示的问题，肯定妥妥的。
 
-总结起来就是：数据源的引用一定不能变，但是塞到数据源中的数据一定要更新。牢牢地掌握好这一条之后，ListView刷新不显示的问题就迎刃而解了。
+**总结起来就是：数据源的引用一定不能变，但是塞到数据源中的数据一定要更新。牢牢地掌握好这一条之后，ListView刷新不显示的问题就迎刃而解了。**
 
-解决“数据源的引用一定不能变”的问题，可以提前创建一个List对象， mData = new ArrayList<>(); 之后一直对这个mData倒腾即可，不要再引入新的数据源，也就是不要再改变mData的引用地址。
+**解决“数据源的引用一定不能变”的问题**，可以提前创建一个List对象， mData = new ArrayList<>(); 之后一直对这个mData倒腾即可，不要再引入新的数据源，也就是不要再改变mData的引用地址。
 
-解决“但是塞到数据源中的数据一定要更新”的问题，可以通过更新数据完成，万一数据源就是没有更新，又想要塞到数据源中，可以通过  
+**解决“但是塞到数据源中的数据一定要更新”的问题**，可以通过更新数据完成，万一数据源就是没有更新，又想要塞到数据源中，可以通过  
 mData.clear();  
 mData.addAll(data);  
 方法实现。
@@ -313,13 +313,15 @@ onTouchEvent中是要判断MotionEvent的Action，因为一次点击操作就会
 onTouchListener是在onTouch方法中生效，而且onTouch要先于onTouchEvent，就是说一旦设置了onTouchListener并且最后onTouch方法返回了True，那onTouchEvent将不会再被执行。而onClickListener和onTouchEvent有些关系，onTouchEvent的默认实现里会调用onClickListener的onClick方法，如果重写了onTouchEvent，因为onClickListener接受不到ACTION_DOWN和ACTION_UP，那么再设置onClickListener也就不会再生效了，这个时候的单击或者长按处理只能在onTouchEvent中自己处理。
 
 ### 12、9patch
-为什么叫9patch呢？Patch的中文意思是"片，块"的意思，那这里按中文的意思来说就是9片或9块.因此可想而知这个图片会被分为9片，如下图片所示:
-![](images/12_9patch_1.png)
+为什么叫9patch呢？Patch的中文意思是"片，块"的意思，那这里按中文的意思来说就是9片或9块.因此可想而知这个图片会被分为9片，如下图片所示:  
+![](images/12_9patch_1.png)  
 工具栏中的Show patches选中，中间紫色的区域就是拉伸区域。  
-工具栏中的Show content选中，看见蓝色的区域，这片区域就是显示内容的区域；比如说：这个图片宽有30px,我们把下面的那一条线的横向的第20px到25px画上了黑点，那么这个图片设置成某个组件的背景后，这个组件的paddingleft就会设置成20dp,paddingRight就会设置成5dp,如果再在布局文件里面设置这两个值，那个这里画的黑点就不起作用了。  
+工具栏中的Show content选中，看见蓝色的区域，这片区域就是显示内容的区域；比如说：这个图片宽有30px,我们把下面的那一条线的横向的第20px到25px画上了黑点，那么这个图片设置成某个组件的背景后，这个组件的paddingleft就会设置成20dp,paddingRight就会设置成5dp,如果再在布局文件里面设置这两个值，那个这里画的黑点就不起作用了。
+
+
 工具栏中的Show bad patches选中，可能会出现下图效果：  
-![](images/12_9patch_2.png)
-其中被选中的3块不符合要求。这里它是根据什么来判断这个绘制的结果不符合要求呢？怎么就认为这三块不符合要求呢？它是根据左侧的黑色的小点所对过来的部分里面的每一个像素点的颜色是否一样。如果像素存在差异，当背景变大的时候就有两种颜色要被重复的绘制，系统就不知道到底绘制这两种颜色哪一种多一点，因此这个工具建议被拉伸的区域只能选择一种颜色。
+![](images/12_9patch_2.png)  
+其中被选中的3块不符合要求。这里它是根据什么来判断这个绘制的结果不符合要求呢？怎么就认为这三块不符合要求呢？它是根据左侧的黑色的小点所对过来的部分里面的每一个像素点的颜色是否一样。如果像素存在差异，当背景变大的时候就有两种颜色要被重复的绘制，系统就不知道到底绘制这两种颜色哪一种多一点，因此这个工具建议被拉伸的区域只能选择一种颜色。  
 
 如果对结果要求比较高的,右下角坐标显示区域就起作用了。
 
@@ -327,10 +329,10 @@ onTouchListener是在onTouch方法中生效，而且onTouch要先于onTouchEvent
 1、replace和add方式的区别
 
 replace 是先remove掉相同containerViewId的所有fragment，然后在add当前的这个fragment。  
-Replace an existing fragment that was added to a container. This is essentially the same as calling remove(Fragment) for all currently added fragments that were added with the same containerViewId and then add(int, Fragment, String) with the same arguments given here.
+>Replace an existing fragment that was added to a container. This is essentially the same as calling remove(Fragment) for all currently added fragments that were added with the same containerViewId and then add(int, Fragment, String) with the same arguments given here.
 
 add 是把一个fragment添加到一个容器 container 里。  
-Add a fragment to the activity state. This fragment may optionally also have its view (if Fragment.onCreateView returns non-null) into a container view of the activity.
+>Add a fragment to the activity state. This fragment may optionally also have its view (if Fragment.onCreateView returns non-null) into a container view of the activity.
 
 而至于返回键，这个跟事务有关，跟使用add还是replace没有任何关系。
 
