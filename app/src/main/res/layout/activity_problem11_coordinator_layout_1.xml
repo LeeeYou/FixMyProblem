@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_problem11__coordinator_layout_"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.leeeyou.fixmyproblem.Problem11_CoordinatorLayout_Activity">
+
+    <TextView
+        android:id="@+id/tv_dependent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/red_pay"
+        android:gravity="center"
+        android:text="denpentent"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="top|right"
+        android:background="@color/ac_detail_bg_green"
+        android:gravity="center"
+        android:text="auto"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_behavior=".behavior.DependentBehavior" />
+
+
+</android.support.design.widget.CoordinatorLayout>

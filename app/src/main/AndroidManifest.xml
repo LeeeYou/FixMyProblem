@@ -18,7 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".Problem01_ImageActivity" />
         <activity android:name=".Problem02_GlideActivity" />
         <activity android:name=".Problem03_SlidingConflictActivity" />
@@ -29,7 +28,10 @@
         <activity android:name=".Problem08_Math_Activity" />
         <activity android:name=".Problem09_ViewDragHelper_Activity" />
         <activity android:name=".Problem10_JSONArray_Activity" />
-
+        <activity
+            android:name=".Problem11_CoordinatorLayout_Activity"
+            android:theme="@style/NoActionBarTheme" />
+        <activity android:name=".coordinator.Step1Activity"></activity>
     </application>
 
 </manifest>
