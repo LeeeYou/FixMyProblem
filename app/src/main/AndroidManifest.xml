@@ -31,7 +31,10 @@
         <activity
             android:name=".Problem11_CoordinatorLayout_Activity"
             android:theme="@style/NoActionBarTheme" />
-        <activity android:name=".coordinator.Step1Activity"></activity>
+        <activity android:name=".coordinator.Step1Activity"/>
+        <activity android:name=".coordinator.Step2Activity"/>
+        <activity android:name=".coordinator.Step3Activity"/>
+
     </application>
 
 </manifest>
