@@ -8,21 +8,21 @@
         android:id="@+id/btn_01"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Step1"
+        android:text="Step1 \n自定义Behavior"
         android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btn_02"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Step2"
+        android:text="Step2 \n自定义Behavior"
         android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btn_03"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Step3"
+        android:text="Step3 \n自定义Behavior,上下滚动切固定一栏"
         android:textAllCaps="false" />
 
     <Button
