@@ -28,7 +28,6 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-
         Button btn_problem_03 = (Button) findViewById(R.id.btn_problem_03);
         btn_problem_03.setOnClickListener(new View.OnClickListener() {
             @Override
