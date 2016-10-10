@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.example.leeeyou.fixmyproblem.custom_view.StickyNavLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_problem11__coordinator_layout_"
+    android:id="@+id/activity_problem11_coordinator_layout_"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
