@@ -28,6 +28,8 @@ public class Step4Activity extends AppCompatActivity {
 
     private BaseQuickAdapter<String> mAdapter;
 
+//    private LoadMoreDefaultFooterView cube_views_load_more_default_footer_text_view;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,7 @@ public class Step4Activity extends AppCompatActivity {
 
         mStickyNavLayout = (StickyNavLayout) findViewById(R.id.activity_problem11_coordinator_layout_);
         ptrFrame = (PtrClassicFrameLayout) findViewById(R.id.store_house_ptr_frame);
+//        cube_views_load_more_default_footer_text_view = (LoadMoreDefaultFooterView) findViewById(R.id.cube_views_load_more_default_footer_text_view);
 
         initPullToRefresh();
         initData();
@@ -67,7 +70,10 @@ public class Step4Activity extends AppCompatActivity {
                 return mStickyNavLayout.getScrollY() == 0;
             }
         });
+
     }
+
+    int pageSize = 0;
 
     private void initRecyclerView() {
         RecyclerView recycylerView = (RecyclerView) findViewById(R.id.id_stickynavlayout_viewpager);
@@ -79,6 +85,30 @@ public class Step4Activity extends AppCompatActivity {
             }
         };
         recycylerView.setAdapter(mAdapter);
+
+        mAdapter.openLoadAnimation();
+        mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
+                ptrFrame.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        for (int i = 0; i < 4; i++) {
+                            mDatas.add("Load More Data " + i);
+                        }
+
+                        if (mAdapter != null) {
+                            mAdapter.notifyDataSetChanged();
+                        }
+
+                        mAdapter.removeAllFooterView();
+                        mAdapter.openLoadMore(pageSize++);
+                    }
+                }, 1500);
+            }
+        });
+
+
     }
 
     private void initData() {
