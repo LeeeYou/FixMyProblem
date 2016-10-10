@@ -13,9 +13,19 @@ import android.widget.OverScroller;
 
 import com.example.leeeyou.fixmyproblem.R;
 
+/**
+ * NestedScrolling机制说白了非常简单:
+ * 就是NestedScrollingParent内部的View，在滑动到时候，会首先将dx、dy传入给NestedScrollingParent，
+ * NestedScrollingParent可以决定是否对其进行消耗，
+ * 一般会根据需求消耗部分或者全部(不过这里并没有实际的约束，你可以随便写消耗多少，可能会对内部View造成一定的影响）。
+ */
 public class StickyNavLayout extends LinearLayout implements NestedScrollingParent {
     private static final String TAG = "StickyNavLayout";
 
+    /*
+     * 一定要按照自己的需求返回true，该方法决定了当前控件是否能接收到其内部View(非并非是直接子View)滑动时的参数；
+     * 假设你只涉及到纵向滑动，这里可以根据nestedScrollAxes这个参数，进行纵向判断。
+     */
     @Override
     public boolean onStartNestedScroll(View child, View target, int nestedScrollAxes) {
         Log.e(TAG, "onStartNestedScroll" + String.valueOf((nestedScrollAxes & ViewCompat.SCROLL_AXIS_VERTICAL) != 0));
@@ -37,11 +47,17 @@ public class StickyNavLayout extends LinearLayout implements NestedScrollingPare
         Log.e(TAG, "onNestedScroll");
     }
 
+    /*
+     * 该方法的会传入内部View移动的dx,dy，
+     * 如果你需要消耗一定的dx,dy，就通过最后一个参数consumed进行指定，
+     *
+     * 例如我要消耗一半的dy，就可以写consumed[1]=dy/2
+     */
     @Override
     public void onNestedPreScroll(View target, int dx, int dy, int[] consumed) {
         Log.e(TAG, "onNestedPreScroll");
-        boolean hiddenTop = dy > 0 && getScrollY() < mTopViewHeight;
-        boolean showTop = dy < 0 && getScrollY() >= 0 && !ViewCompat.canScrollVertically(target, -1);
+        boolean hiddenTop = dy > 0 && getScrollY() < mTopViewHeight; //如果是上滑且顶部控件未完全隐藏，则消耗掉dy
+        boolean showTop = dy < 0 && getScrollY() >= 0 && !ViewCompat.canScrollVertically(target, -1);//如果是下滑且内部View已经无法继续下拉，则消耗掉dy
 
         if (hiddenTop || showTop) {
             scrollBy(0, dy);
@@ -49,6 +65,9 @@ public class StickyNavLayout extends LinearLayout implements NestedScrollingPare
         }
     }
 
+    /*
+     * 你可以捕获对内部View的fling事件，如果return true则表示拦截掉内部View的事件。
+     */
     @Override
     public boolean onNestedFling(View target, float velocityX, float velocityY, boolean consumed) {
         Log.e(TAG, "onNestedFling");
