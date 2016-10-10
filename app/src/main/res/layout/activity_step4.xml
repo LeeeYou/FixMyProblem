@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         cube_ptr:ptr_duration_to_close="300"
-        cube_ptr:ptr_duration_to_close_header="2000"
+        cube_ptr:ptr_duration_to_close_header="1500"
         cube_ptr:ptr_keep_header_when_refresh="true"
         cube_ptr:ptr_pull_to_fresh="false"
         cube_ptr:ptr_ratio_of_header_height_to_refresh="1.2"
@@ -25,25 +25,59 @@
                 android:id="@id/id_stickynavlayout_topview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#4400ff00">
+                android:background="#295E62">
 
                 <TextView
+                    android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="126dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
                     android:gravity="center"
                     android:text="这里是Banner"
                     android:textSize="30sp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
-            <TextView
-                android:id="@id/id_stickynavlayout_indicator"
+
+            <LinearLayout
+                android:id="@+id/id_stickynavlayout_indicator"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="#98ffff"
-                android:gravity="center"
-                android:text="这里是条件筛选栏"
-                android:textSize="24sp" />
+                android:background="#1C4648">
+
+                <TextView
+                    android:id="@+id/id_stickynavlayout_indicator1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="地区"
+                    android:textColor="#fff"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/id_stickynavlayout_indicator2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="赛事级别"
+                    android:textColor="#fff"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/id_stickynavlayout_indicator3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="赛制"
+                    android:textColor="#fff"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/id_stickynavlayout_viewpager"

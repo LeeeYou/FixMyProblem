@@ -83,7 +83,7 @@ public class Step4Activity extends AppCompatActivity {
 
     private void initData() {
         mDatas = new ArrayList<>();
-        for (int i = 1; i < 51; i++) {
+        for (int i = 0; i < 10; i++) {
             mDatas.add(" RecyclerView --> " + i);
         }
     }
