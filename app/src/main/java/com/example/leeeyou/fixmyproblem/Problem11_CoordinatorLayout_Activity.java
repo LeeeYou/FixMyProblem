@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.example.leeeyou.fixmyproblem.coordinator.Step1Activity;
 import com.example.leeeyou.fixmyproblem.coordinator.Step2Activity;
 import com.example.leeeyou.fixmyproblem.coordinator.Step3Activity;
+import com.example.leeeyou.fixmyproblem.coordinator.Step4Activity;
 
 public class Problem11_CoordinatorLayout_Activity extends AppCompatActivity {
 
@@ -44,12 +45,13 @@ public class Problem11_CoordinatorLayout_Activity extends AppCompatActivity {
             }
         });
 
-//        btn_04.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+        btn_04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Problem11_CoordinatorLayout_Activity.this, Step4Activity.class));
+            }
+        });
+
 
     }
 }

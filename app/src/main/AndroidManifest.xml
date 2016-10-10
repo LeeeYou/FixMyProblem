@@ -34,6 +34,7 @@
         <activity android:name=".coordinator.Step1Activity"/>
         <activity android:name=".coordinator.Step2Activity"/>
         <activity android:name=".coordinator.Step3Activity"/>
+        <activity android:name=".coordinator.Step4Activity"/>
 
     </application>
 
