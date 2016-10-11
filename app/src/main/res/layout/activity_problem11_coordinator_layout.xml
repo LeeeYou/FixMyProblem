@@ -29,7 +29,7 @@
         android:id="@+id/btn_04"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Step4 \nNestedScrolling配合PtrClassicFrameLayout实现下拉刷新"
+        android:text="Step4 \nNestedScrolling配合\nPtrClassicFrameLayout实现下拉刷新\nBaseRecyclerViewAdapterHelper实现加载更多"
         android:textAllCaps="false" />
 
 </LinearLayout>

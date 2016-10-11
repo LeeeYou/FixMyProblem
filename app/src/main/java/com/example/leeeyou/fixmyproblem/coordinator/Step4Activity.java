@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -19,6 +20,8 @@ import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrFrameLayout;
 import in.srain.cube.views.ptr.PtrHandler;
 
+import static android.nfc.tech.MifareUltralight.PAGE_SIZE;
+
 public class Step4Activity extends AppCompatActivity {
 
     private PtrClassicFrameLayout ptrFrame;
@@ -28,7 +31,11 @@ public class Step4Activity extends AppCompatActivity {
 
     private BaseQuickAdapter<String> mAdapter;
 
-//    private LoadMoreDefaultFooterView cube_views_load_more_default_footer_text_view;
+    private View notLoadingView;
+
+    private static final int PAGESIZE = 10;
+
+    private static final int TOTAL_COUNTER = 40;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +44,6 @@ public class Step4Activity extends AppCompatActivity {
 
         mStickyNavLayout = (StickyNavLayout) findViewById(R.id.activity_problem11_coordinator_layout_);
         ptrFrame = (PtrClassicFrameLayout) findViewById(R.id.store_house_ptr_frame);
-//        cube_views_load_more_default_footer_text_view = (LoadMoreDefaultFooterView) findViewById(R.id.cube_views_load_more_default_footer_text_view);
 
         initPullToRefresh();
         initData();
@@ -51,6 +57,15 @@ public class Step4Activity extends AppCompatActivity {
                 frame.postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        mAdapter.openLoadMore(PAGE_SIZE);
+                        mAdapter.removeAllFooterView();
+
+                        if (mDatas != null) {
+                            mDatas.clear();
+                        } else {
+                            mDatas = new ArrayList<>();
+                        }
+
                         for (int i = 0; i < 2; i++) {
                             mDatas.add(0, "New Data " + i);
                         }
@@ -73,10 +88,8 @@ public class Step4Activity extends AppCompatActivity {
 
     }
 
-    int pageSize = 0;
-
     private void initRecyclerView() {
-        RecyclerView recycylerView = (RecyclerView) findViewById(R.id.id_stickynavlayout_viewpager);
+        final RecyclerView recycylerView = (RecyclerView) findViewById(R.id.id_stickynavlayout_viewpager);
         recycylerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mAdapter = new BaseQuickAdapter<String>(R.layout.item_coordinator_layout, mDatas) {
             @Override
@@ -87,28 +100,31 @@ public class Step4Activity extends AppCompatActivity {
         recycylerView.setAdapter(mAdapter);
 
         mAdapter.openLoadAnimation();
+        mAdapter.openLoadMore(PAGESIZE);
         mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override
             public void onLoadMoreRequested() {
                 ptrFrame.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        for (int i = 0; i < 4; i++) {
-                            mDatas.add("Load More Data " + i);
+                        List<String> datas = new ArrayList<>(PAGESIZE);
+                        for (int i = 0; i < PAGESIZE; i++) {
+                            datas.add("Load More Data " + i);
                         }
 
-                        if (mAdapter != null) {
-                            mAdapter.notifyDataSetChanged();
-                        }
+                        mAdapter.addData(datas);
 
-                        mAdapter.removeAllFooterView();
-                        mAdapter.openLoadMore(pageSize++);
+                        if (mAdapter.getData().size() >= TOTAL_COUNTER) {
+                            mAdapter.loadComplete();
+                            if (notLoadingView == null) {
+                                notLoadingView = getLayoutInflater().inflate(R.layout.not_loading, (ViewGroup) recycylerView.getParent(), false);
+                            }
+                            mAdapter.addFooterView(notLoadingView);
+                        }
                     }
                 }, 1500);
             }
         });
-
-
     }
 
     private void initData() {
