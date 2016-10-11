@@ -40,7 +40,7 @@ public class Step5Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_step4);
+        setContentView(R.layout.activity_step5);
 
         mStickyNavLayout = (StickyNavLayout) findViewById(R.id.activity_problem11_coordinator_layout_);
         ptrFrame = (PtrClassicFrameLayout) findViewById(R.id.store_house_ptr_frame);
