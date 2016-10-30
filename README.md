@@ -682,4 +682,35 @@ android:descendantFocusability属性共有三个取值
 在ScrollView中嵌套一个RelativeLayout,并设置MATCH_PARENT给RelativeLayout。此时想在屏幕底部放置一个Button会出现无法正确的固定到底部。
 通过设置ScrollView的android:fillViewport为true可以解决此问题。
 
-当ScrollView未设置fillViewport=“true”时, 里面的元素(比如LinearLayout)会按照wrap_content来计算(不论它是否设了"match_parent"),而如果LinearLayout的元素设置了match_parent,那么也是不管用的。因为LinearLayout依赖里面的元素，而里面的元素又依赖LinearLayout,这样自相矛盾。所以里面元素设置了match_parent，也会当做wrap_content来计算.
+当ScrollView未设置fillViewport=“true”时, 里面的元素(比如LinearLayout)会按照wrap_content来计算(不论它是否设了"match_parent"),而如果LinearLayout的元素设置了match_parent,那么也是不管用的。因为LinearLayout依赖里面的元素，而里面的元素又依赖LinearLayout,这样自相矛盾。所以里面元素设置了match_parent，也会当做wrap_content来计算。
+
+### 22、判断RecyclerView是否可以垂直滚动
+
+```java
+
+RecyclerView.canScrollVertically(1)的值表示是否能向上滚动，false表示已经滚动到底部
+RecyclerView.canScrollVertically(-1)的值表示是否能向下滚动，false表示已经滚动到顶部
+
+```
+
+下面这段代码是在PtrFrameLayout中嵌套RecyclerView的例子
+
+```java
+
+ptrFrame.setPtrHandler(new PtrHandler() {
+    @Override
+    public void onRefreshBegin(PtrFrameLayout frame) {
+        onRefreshBefore();
+
+        fetchDataFromServer();
+    }
+
+    @Override
+    public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
+        // 默认实现，根据实际情况做改动
+
+        return !mRecyclerView.canScrollVertically(-1);
+    }
+});
+
+```
