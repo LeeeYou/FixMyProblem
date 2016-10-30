@@ -714,3 +714,84 @@ ptrFrame.setPtrHandler(new PtrHandler() {
 });
 
 ```
+
+### 23、LoaderManager的使用
+1.Loader特性：    
+(1).对于每个Activity或者Fragment都可用  
+(2).提供异步加载数据  
+(3).监视数据资源，当内容改变时重新更新  
+(4).当配置改变时，自动重新连接最新的cursor，故不需要重新查询数据  
+
+2.Loader相关类接口  
+(1).LoaderManager  
+对于每个activity或者fragment只存在一个与之相关的LoaderManager对象,该LoaderManager对象可以存在多个可供管理loader对象。  
+(2).LoaderManager.LoaderCallbacks  
+LoaderManager.LoaderCallbacks是个回掉接口，用于客户端与LoaderManager的交互，loader对象就是在其接口的onCreateLoader()方法中得到，在使用时需要覆盖其方法。  
+(3).CursorLoader  
+CursorLoader是AsyncTaskLoader的子类，通过它可以查询ContentResolver并返回一个Cursor对象，并使用该cursor对象在后台线程执行查询操作，以不至于会阻塞主线程，从一个内容提供者去异步加载数据是CursorLoader对象最大用处。  
+
+```java
+
+...
+
+public class GalleryFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
+    private GalleryAdapter mGalleryAdapter;
+    private ImageLoader imageLoader;
+
+    ...
+
+    /**
+     * 切换目录
+     *
+     * @param dirId   目录id
+     * @param dirName 目录名
+     */
+    public void switchDir(int dirId, String dirName) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("dirId", dirId);
+        getLoaderManager().restartLoader(0, bundle, this);
+        title.setText(dirName);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        imageLoader.stop();
+    }
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        String select = null;
+        if (args != null) {
+            dirId = args.getInt("dirId", 0);
+            if (dirId != 0) {
+                select = String.format("%s == %s", MediaStore.Images.Media.BUCKET_ID, dirId);
+            }
+        }
+
+        Uri baseUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+
+        return new CursorLoader(getActivity(),
+                baseUri,
+                new String[]{MediaStore.Images.Media._ID, MediaStore.Images.Media.DATA,},
+                select,
+                null,
+                MediaStore.Images.Media.DATE_TAKEN + " DESC"
+        );
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+        mGalleryAdapter.swapCursor(data);
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+        mGalleryAdapter.swapCursor(null);
+    }
+
+
+}
+
+
+```
