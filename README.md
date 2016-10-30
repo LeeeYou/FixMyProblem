@@ -619,8 +619,43 @@ public class Problem10_JSONArray_Activity extends BaseActivity {
 ```
 
 ### 18、记录bug:Fragment already active
-**现象**：反复进入退出进入退出某一个fragment界面导致
-**分析**：在 Fragment 没有被添加到 FragmentManager 之前，我们可以通过 Fragment.setArguments() 来设置参数，并在 Fragment 中，使用 getArguments() 来取得参数。在 Fragment 被添加到 FragmentManager 后，一旦被使用，我们再次调用 setArguments() 将会导致 java.lang.IllegalStateException: Fragment already active 异常。
-**解决**：
-1、可以在add()方法时候,先判断currentFragment.isAdded();
-2、可以使用setter和getter Fragment的属性方法进行数据的存储和获取;
+**现象**：  
+反复进入退出进入退出某一个fragment界面导致  
+**分析**：  
+在 Fragment 没有被添加到 FragmentManager 之前，我们可以通过 Fragment.setArguments() 来设置参数，并在 Fragment 中，使用 getArguments() 来取得参数。在 Fragment 被添加到 FragmentManager 后，一旦被使用，我们再次调用 setArguments() 将会导致 java.lang.IllegalStateException: Fragment already active 异常。  
+**解决**：  
+1、可以在add()方法时候,先判断currentFragment.isAdded();  
+2、可以使用setter和getter Fragment的属性方法进行数据的存储和获取;  
+
+### 19、记录bug:调用fragment的replace加载显示异常的问题
+**现象**：  
+现有FragmentA和FragmentB，当前显示FragmentA，用fragmentTransaction调用replace加载FragmentB时，可能会出现加载不成功的情况，显示的还是FragmentA  
+**分析**：  
+使用replace会带来一个问题，FragmentA在replace后会被销毁，会调用其生命周期函数(onDestoryView()、onPause()、onDestory())。如果频繁地replace Fragment会不断创建新实例并销毁旧的，无法重用。经过多次切换后，会导致Fragment上的View无法加载的问题，此时就会出现点击切换图标，还是显示FragmentA  
+**解决**：  
+1、可以利用add()方法配合show()和hide()来弥补replace带来的低效问题  
+
+```java
+
+private void hideFragments(FragmentTransaction transaction) {
+        if (indexFragment != null) {
+            transaction.hide(indexFragment);
+        }
+        if (newVenueFragment != null) {
+            transaction.hide(newVenueFragment);
+        }
+        if (sportVenueFragment != null) {
+            transaction.hide(sportVenueFragment);
+        }
+        if (messageMainFragment != null) {
+            transaction.hide(messageMainFragment);
+        }
+        if (mineFragment != null) {
+            transaction.hide(mineFragment);
+        }
+    }
+
+//再调用如下方法来显示你要替换的fragment
+fragmentTransaction.show(indexFragment);
+
+```
