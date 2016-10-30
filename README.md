@@ -667,6 +667,7 @@ android:descendantFocusability属性共有三个取值
 2 afterDescendants： viewgroup 只有当其子类控件不需要获取焦点时才获取焦点   
 3 blocksDescendants：viewgroup 会覆盖子类控件而直接获得焦点   
 
+
 ```xml
 <com.quncao.pulltorefreshlib.PullToRefreshScrollView
         android:id="@+id/pullToRefreshScrollView"
@@ -676,3 +677,9 @@ android:descendantFocusability属性共有三个取值
         android:descendantFocusability="blocksDescendants"
         android:orientation="vertical">
 ```
+
+### 21、ScrollView MATCH_PARENT 无法填满屏幕
+在ScrollView中嵌套一个RelativeLayout,并设置MATCH_PARENT给RelativeLayout。此时想在屏幕底部放置一个Button会出现无法正确的固定到底部。
+通过设置ScrollView的android:fillViewport为true可以解决此问题。
+
+当ScrollView未设置fillViewport=“true”时, 里面的元素(比如LinearLayout)会按照wrap_content来计算(不论它是否设了"match_parent"),而如果LinearLayout的元素设置了match_parent,那么也是不管用的。因为LinearLayout依赖里面的元素，而里面的元素又依赖LinearLayout,这样自相矛盾。所以里面元素设置了match_parent，也会当做wrap_content来计算.
