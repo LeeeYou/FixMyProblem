@@ -633,7 +633,7 @@ public class Problem10_JSONArray_Activity extends BaseActivity {
 **分析**：  
 使用replace会带来一个问题，FragmentA在replace后会被销毁，会调用其生命周期函数(onDestoryView()、onPause()、onDestory())。如果频繁地replace Fragment会不断创建新实例并销毁旧的，无法重用。经过多次切换后，会导致Fragment上的View无法加载的问题，此时就会出现点击切换图标，还是显示FragmentA  
 **解决**：  
-1、可以利用add()方法配合show()和hide()来弥补replace带来的低效问题  
+可以利用add()方法配合show()和hide()来弥补replace带来的低效问题  
 
 ```java
 
@@ -658,4 +658,21 @@ private void hideFragments(FragmentTransaction transaction) {
 //再调用如下方法来显示你要替换的fragment
 fragmentTransaction.show(indexFragment);
 
+```
+
+### 20、ScrollView中嵌套ListView时，ListView抢夺焦点问题
+ListView嵌入到可滚动的控件中时，ListView会抢夺页面的焦点。对于此类问题的终极解决方案是：使用属性 **descendantFocusabilit**。  
+android:descendantFocusability属性共有三个取值  
+1 beforeDescendants：viewgroup 会优先其子类控件而获取到焦点   
+2 afterDescendants： viewgroup 只有当其子类控件不需要获取焦点时才获取焦点   
+3 blocksDescendants：viewgroup 会覆盖子类控件而直接获得焦点   
+
+```xml
+<com.quncao.pulltorefreshlib.PullToRefreshScrollView
+        android:id="@+id/pullToRefreshScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e8e8e8"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical">
 ```
