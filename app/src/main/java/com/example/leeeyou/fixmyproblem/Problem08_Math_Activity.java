@@ -71,4 +71,3 @@ public class Problem08_Math_Activity extends BaseActivity {
         public float score;
     }
 }
-

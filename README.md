@@ -617,3 +617,10 @@ public class Problem10_JSONArray_Activity extends BaseActivity {
 }
 
 ```
+
+### 18、记录bug:Fragment already active
+**现象**：反复进入退出进入退出某一个fragment界面导致
+**分析**：在 Fragment 没有被添加到 FragmentManager 之前，我们可以通过 Fragment.setArguments() 来设置参数，并在 Fragment 中，使用 getArguments() 来取得参数。在 Fragment 被添加到 FragmentManager 后，一旦被使用，我们再次调用 setArguments() 将会导致 java.lang.IllegalStateException: Fragment already active 异常。
+**解决**：
+1、可以在add()方法时候,先判断currentFragment.isAdded();
+2、可以使用setter和getter Fragment的属性方法进行数据的存储和获取;
