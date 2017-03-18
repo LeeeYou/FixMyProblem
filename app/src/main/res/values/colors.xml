@@ -5,7 +5,6 @@
     <color name="colorAccent">#FF4081</color>
 
 
-
     <!--loading背景色-->
     <color name="black_alpha">#7f000000</color>
     <!--覆盖颜色-->
@@ -155,5 +154,8 @@
 
     <color name="new_report_list_nor">#FFFFFFFF</color>
     <color name="new_report_list_press">#FFEEEEEE</color>
+
+    <color name="index_item_bg">#43a047</color>
+    <color name="index_item_bg_press">#1b5e20</color>
 
 </resources>

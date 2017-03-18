@@ -7,7 +7,6 @@
     android:background="#f2f2f2"
     android:divider="#f2f2f2"
     android:dividerHeight="10dp"
-    android:drawSelectorOnTop="false"
     android:paddingBottom="12dp"
     android:paddingLeft="12dp"
     android:paddingRight="12dp"

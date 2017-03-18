@@ -3,7 +3,7 @@
     android:id="@+id/ll_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#43a047"
+    android:background="@drawable/selector_index_item"
     android:orientation="vertical">
 
     <TextView
@@ -15,9 +15,9 @@
         android:layout_marginTop="12dp"
         android:gravity="center_vertical"
         android:text="Problem1"
+        android:textStyle="bold"
         android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tv_title_desc"
