@@ -38,7 +38,6 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         setTitle("FixProblem");
-
         initData();
         initAdapter();
     }

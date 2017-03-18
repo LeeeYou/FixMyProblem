@@ -8,7 +8,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -19,7 +18,7 @@ import com.example.leeeyou.fixmyproblem.R;
 /**
  * Glide 做圆形图片和圆角图片
  */
-public class Problem02_GlideActivity extends AppCompatActivity {
+public class Problem02_GlideActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -2,7 +2,6 @@ package com.example.leeeyou.fixmyproblem.view.activity;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 
 import com.example.leeeyou.fixmyproblem.R;
 import com.example.leeeyou.fixmyproblem.view.fragment.PageFragment;
@@ -14,7 +13,7 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 /**
  * 事件冲突案例
  */
-public class Problem03_SlidingConflictActivity extends AppCompatActivity {
+public class Problem03_SlidingConflictActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
