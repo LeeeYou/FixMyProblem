@@ -5,7 +5,7 @@ import android.content.Context;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.leeeyou.fixmyproblem.R;
-import com.example.leeeyou.fixmyproblem.entity.MultipleItem;
+import com.example.leeeyou.fixmyproblem.model.vo.MultipleItem;
 
 import java.util.List;
 

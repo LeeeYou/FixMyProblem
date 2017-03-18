@@ -11,31 +11,31 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Problem01_ImageActivity" />
-        <activity android:name=".Problem02_GlideActivity" />
-        <activity android:name=".Problem03_SlidingConflictActivity" />
-        <activity android:name=".Problem04_ShapeSourceActivity" />
-        <activity android:name=".Problem05_EventBusActivity" />
-        <activity android:name=".Problem06_EventDispatchActivity" />
-        <activity android:name=".Problem07_Fragment_LifeCycle_Activity" />
-        <activity android:name=".Problem08_Math_Activity" />
-        <activity android:name=".Problem09_ViewDragHelper_Activity" />
-        <activity android:name=".Problem10_JSONArray_Activity" />
+        <activity android:name=".view.activity.Problem01_ImageActivity" />
+        <activity android:name=".view.activity.Problem02_GlideActivity" />
+        <activity android:name=".view.activity.Problem03_SlidingConflictActivity" />
+        <activity android:name=".view.activity.Problem04_ShapeSourceActivity" />
+        <activity android:name=".view.activity.Problem05_EventBusActivity" />
+        <activity android:name=".view.activity.Problem06_EventDispatchActivity" />
+        <activity android:name=".view.activity.Problem07_Fragment_LifeCycle_Activity" />
+        <activity android:name=".view.activity.Problem08_Math_Activity" />
+        <activity android:name=".view.activity.Problem09_ViewDragHelper_Activity" />
+        <activity android:name=".view.activity.Problem10_JSONArray_Activity" />
         <activity
-            android:name=".Problem11_CoordinatorLayout_Activity"
+            android:name=".view.activity.Problem11_CoordinatorLayout_Activity"
             android:theme="@style/NoActionBarTheme" />
-        <activity android:name=".coordinator.Step1Activity"/>
-        <activity android:name=".coordinator.Step2Activity"/>
-        <activity android:name=".coordinator.Step3Activity"/>
-        <activity android:name=".coordinator.Step4Activity"/>
-        <activity android:name=".coordinator.Step5Activity"/>
+        <activity android:name=".view.activity.coordinator.Step1Activity"/>
+        <activity android:name=".view.activity.coordinator.Step2Activity"/>
+        <activity android:name=".view.activity.coordinator.Step3Activity"/>
+        <activity android:name=".view.activity.coordinator.Step4Activity"/>
+        <activity android:name=".view.activity.coordinator.Step5Activity"/>
 
     </application>
 

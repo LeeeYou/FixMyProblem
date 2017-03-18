@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath 'com.android.tools.build:gradle:2.3.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -15,13 +15,32 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-
         maven { url "https://jitpack.io" }
-
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    minSdkVersion = 15
+    compileSdkVersion = 25
+    buildToolsVersion = '25.0.2'
+
+    junit = 'junit:junit:4.12'
+    supportAppcompat = 'com.android.support:appcompat-v7:25.3.0'
+    supportDesign = 'com.android.support:design:23.4.0'
+    supportCardview = 'com.android.support:cardview-v7:23.4.0'
+    smarttablayout = 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
+    smarttablayoutUtils = 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
+    glide = 'com.github.bumptech.glide:glide:3.7.0'
+    gson = 'com.google.code.gson:gson:2.6.2'
+    eventbus = 'org.greenrobot:eventbus:3.0.0'
+    cubeUltraPtr = 'in.srain.cube:ultra-ptr:1.0.11'
+    cubeSdk = 'in.srain.cube:cube-sdk:1.0.44@aar'
+    baseRecyclerViewAdapter = 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.1.8'
+    butterknife = 'com.jakewharton:butterknife:8.5.1'
+    butterknifeCompiler = 'com.jakewharton:butterknife-compiler:8.5.1'
 }

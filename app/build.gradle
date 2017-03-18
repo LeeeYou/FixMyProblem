@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "com.example.leeeyou.fixmyproblem"
-        minSdkVersion 15
+        minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -21,25 +21,19 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
 
-    //Optional: see how to use the utility.
-    compile 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
-
-    compile 'com.google.code.gson:gson:2.6.2'
-
-    compile 'org.greenrobot:eventbus:3.0.0'
-
-    compile 'com.android.support:design:23.4.0'
-
-    compile 'in.srain.cube:ultra-ptr:1.0.11'
-
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.1.8'
-    compile 'in.srain.cube:cube-sdk:1.0.44@aar'
-
-    compile 'com.android.support:cardview-v7:23.4.0'
-
+    testCompile rootProject.ext.junit
+    compile rootProject.ext.supportAppcompat
+    compile rootProject.ext.supportDesign
+    compile rootProject.ext.supportCardview
+    compile rootProject.ext.smarttablayout
+    compile rootProject.ext.smarttablayoutUtils
+    compile rootProject.ext.glide
+    compile rootProject.ext.gson
+    compile rootProject.ext.eventbus
+    compile rootProject.ext.cubeUltraPtr
+    compile rootProject.ext.cubeSdk
+    compile rootProject.ext.baseRecyclerViewAdapter
+    compile rootProject.ext.butterknife
+    compile rootProject.ext.butterknifeCompiler
 }

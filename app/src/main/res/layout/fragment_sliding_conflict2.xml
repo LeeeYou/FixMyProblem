@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.leeeyou.fixmyproblem.custom_view.MScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.leeeyou.fixmyproblem.view.custom.MScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e8e8e8">
@@ -23,7 +23,7 @@
             android:textColor="#2d2d37"
             android:textSize="16sp" />
 
-        <com.example.leeeyou.fixmyproblem.custom_view.MSinaSportView
+        <com.example.leeeyou.fixmyproblem.view.custom.MSinaSportView
             android:id="@+id/sinasport_knockout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
 
         </LinearLayout>
 
-        <com.example.leeeyou.fixmyproblem.custom_view.MListView
+        <com.example.leeeyou.fixmyproblem.view.custom.MListView
             android:id="@+id/lv_scoreboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,5 +95,5 @@
             android:visibility="visible" />
 
     </RelativeLayout>
-</com.example.leeeyou.fixmyproblem.custom_view.MScrollView>
+</com.example.leeeyou.fixmyproblem.view.custom.MScrollView>
 

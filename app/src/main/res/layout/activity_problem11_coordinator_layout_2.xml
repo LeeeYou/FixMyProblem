@@ -5,7 +5,7 @@
     android:id="@+id/activity_problem11_coordinator_layout_"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.leeeyou.fixmyproblem.Problem11_CoordinatorLayout_Activity">
+    tools:context="com.example.leeeyou.fixmyproblem.view.activity.Problem11_CoordinatorLayout_Activity">
 
 
     <android.support.v4.widget.NestedScrollView

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.leeeyou.fixmyproblem.custom_view.OuterLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.leeeyou.fixmyproblem.view.custom.OuterLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="500dp"
     android:background="#80123bba"
     android:orientation="vertical"
     android:padding="10dp">
 
-    <com.example.leeeyou.fixmyproblem.custom_view.InnerLayout
+    <com.example.leeeyou.fixmyproblem.view.custom.InnerLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="#872110"
         android:gravity="center_vertical"
         android:orientation="vertical">
 
-        <com.example.leeeyou.fixmyproblem.custom_view.MyButton
+        <com.example.leeeyou.fixmyproblem.view.custom.MyButton
             android:id="@+id/btn_1"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -22,7 +22,7 @@
             android:padding="15dp"
             android:text="事件传递顺序体验" />
 
-    </com.example.leeeyou.fixmyproblem.custom_view.InnerLayout>
+    </com.example.leeeyou.fixmyproblem.view.custom.InnerLayout>
 
     <Button
         android:id="@+id/btn_2"
@@ -32,4 +32,4 @@
         android:text="GesutureDetector"
         android:textAllCaps="false" />
 
-</com.example.leeeyou.fixmyproblem.custom_view.OuterLayout>
+</com.example.leeeyou.fixmyproblem.view.custom.OuterLayout>

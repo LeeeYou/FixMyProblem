@@ -1,104 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="5dp"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-    android:paddingTop="5dp">
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
 
-    <LinearLayout
+    <ListView
+        android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#00FF00"
+        android:drawSelectorOnTop="false" />
 
-        <Button
-            android:id="@+id/btn_problem_01"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem01_Image"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_problem_02"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem02_Glide"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_problem_03"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem03_Slideing_Conflict"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_problem_04"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem04_Shape_SOURCE"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_problem_05"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem05_EventBus"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_problem_06"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem06_EventDispath"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_problem_07"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem07_Fragment_LifeCycle"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_problem_08"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem08_Math_Activity"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_problem_09"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem09_ViewDragHelper"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_problem_10"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem10_JSONArray"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_problem_11"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="Problem11_CoordinatorLayout"
-            android:textAllCaps="false" />
-
-    </LinearLayout>
-</ScrollView>
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF0000"
+        android:text="No data" />
+</LinearLayout>
