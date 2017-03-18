@@ -2,37 +2,31 @@
 <resources>
 
     <string-array name="index_title">
-        <item>Problem1</item>
-        <item>Problem2</item>
-        <item>Problem3</item>
-        <item>Problem4</item>
-        <item>Problem5</item>
-        <item>Problem6</item>
-        <item>Problem7</item>
-        <item>Problem8</item>
-        <item>Problem9</item>
+        <item>Problem01</item>
+        <item>Problem02</item>
+        <item>Problem03</item>
+        <item>Problem04</item>
+        <item>Problem05</item>
+        <item>Problem06</item>
+        <item>Problem07</item>
+        <item>Problem08</item>
+        <item>Problem09</item>
         <item>Problem10</item>
         <item>Problem11</item>
-        <item>Problem12</item>
     </string-array>
 
     <string-array name="index_title_desc">
-        <item>对Image的理解</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
-        <item>ImageView111</item>
+        <item>01：对Image的理解</item>
+        <item>02：Glide加载Gif</item>
+        <item>03：滑动冲突示例</item>
+        <item>04：Shape资源示例</item>
+        <item>05：EventBus示例</item>
+        <item>06：事件传递示例</item>
+        <item>07：Fragment生命周期示例</item>
+        <item>08：对Math的API使用</item>
+        <item>09：ViewDrawHelper示例</item>
+        <item>10：JSON的相互转换</item>
+        <item>11：CoordinatorLayout示例</item>
     </string-array>
 
 </resources>
