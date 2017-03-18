@@ -1,7 +1,6 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.example.leeeyou.fixmyproblem.event.MessageEvent;
@@ -10,12 +9,12 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-public class BaseActivity extends AppCompatActivity {
-
+public class BaseActivity extends BaseStyleActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EventBus.getDefault().register(this);
+        setToolbarStyle();
     }
 
     @Override

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#388e3c</color>
+    <color name="colorPrimaryDark">#2e7d32</color>
     <color name="colorAccent">#FF4081</color>
 
 
@@ -157,5 +157,11 @@
 
     <color name="index_item_bg">#43a047</color>
     <color name="index_item_bg_press">#1b5e20</color>
+
+    <color name="status_bg_green">#388e3c</color>
+    <color name="status_bg_red">#f44336</color>
+    <color name="status_bg_pink">#e91e63</color>
+    <color name="status_bg_purple">#9c27b0</color>
+    <color name="status_bg_purple_deep">#673ab7</color>
 
 </resources>

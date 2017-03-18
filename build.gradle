@@ -43,4 +43,5 @@ ext {
     baseRecyclerViewAdapter = 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.1.8'
     butterknife = 'com.jakewharton:butterknife:8.5.1'
     butterknifeCompiler = 'com.jakewharton:butterknife-compiler:8.5.1'
+    statusBarCompat = 'com.github.niorgai:StatusBarCompat:2.1.3'
 }

@@ -36,4 +36,6 @@ dependencies {
     compile rootProject.ext.baseRecyclerViewAdapter
     compile rootProject.ext.butterknife
     compile rootProject.ext.butterknifeCompiler
+    compile(rootProject.ext.statusBarCompat, { exclude group: 'com.android.support' })
 }
+
