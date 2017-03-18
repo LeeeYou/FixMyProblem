@@ -16,14 +16,14 @@
     </string-array>
 
     <string-array name="index_title_desc">
-        <item>01：对Image的理解</item>
-        <item>02：Glide加载Gif</item>
+        <item>01：ImageView的background和src的不同</item>
+        <item>02：Glide加载圆形图、圆角图、Gif</item>
         <item>03：滑动冲突示例</item>
         <item>04：Shape资源示例</item>
-        <item>05：EventBus示例</item>
+        <item>05：EventBus粘性事件示例</item>
         <item>06：事件传递示例</item>
-        <item>07：Fragment生命周期示例</item>
-        <item>08：对Math的API使用</item>
+        <item>07：Fragment ➡️ replace和add方式的区别</item>
+        <item>08：使用Math的API</item>
         <item>09：ViewDrawHelper示例</item>
         <item>10：JSON的相互转换</item>
         <item>11：CoordinatorLayout示例</item>
