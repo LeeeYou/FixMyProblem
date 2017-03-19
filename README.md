@@ -162,12 +162,12 @@ public class Problem02_GlideActivity extends AppCompatActivity {
 **解决**：采用内部拦截法配合getParent().requestDisallowInterceptTouchEvent(false);  
 
 效果图如下：
-![](images/04_event.png)
+![](https://github.com/LeeeYou/Img/blob/master/fixmyproblem/04_event.png?raw=true)
 
 这篇日志也记录了[Android事件体系的知识](http://leeeyou.xyz/Android-Android%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2-%E6%8B%86%E4%B9%A6-%E7%AC%AC%E4%B8%89%E7%AB%A0)
 
 ### 5、shape资源整理
-![](images/05_shape.png)
+![](https://github.com/LeeeYou/Img/blob/master/fixmyproblem/05_shape.png?raw=true)
 
 **android:shape=["rectangle" | "oval" | "line" | "ring"]**  
 shape的形状，默认为矩形，可以设置为矩形（rectangle）、椭圆形(oval)、线性形状(line)、环形(ring)下面的属性只有在android:shape="ring时可用：  
@@ -265,8 +265,8 @@ mData.addAll(data);
 
 解决方法截图：
 
-![](images/08_adapter_1.png)
-![](images/08_adapter_2.png)
+![](https://github.com/LeeeYou/Img/blob/master/fixmyproblem/08_adapter_1.png?raw=true)
+![](https://github.com/LeeeYou/Img/blob/master/fixmyproblem/08_adapter_2.png?raw=true)
 
 ### 9、记录bug：recyclerView在fragment中 notifyDataSetChange不起作用的问题
 **现象**：在创建一口价时，activity中放置了两个fragment，选择图片时，跳转到另外一个界面，返回时，又重新创建了fragment  
@@ -292,10 +292,10 @@ EventBus#Post()也只做了三件事:
 ### 11、事件传递机制
 ① 假设最高层View叫OuterLayout，中间层View叫InnerLayout，最底层View叫MyVIew。调用顺序是这样的（假设各个函数返回的都是false）  
 OuterLayout.onInterceptTouchEvent->InnerLayout.onInterceptTouchEvent->MyView.onTouchEvent->InnerLayout.onTouchEvent->OuterLayout.onTouchEvent。
-![](images/11_event_dispatch.png)
+![](https://github.com/LeeeYou/Img/blob/master/fixmyproblem/11_event_dispatch.png?raw=true)
 
 ② 内部拦截法，子控件拦截父控件事件  
-![](images/11_event_dispatch_2.png)
+![](https://github.com/LeeeYou/Img/blob/master/fixmyproblem/11_event_dispatch_2.png?raw=true)
 
 ③ 注意点  
 一个view一旦拦截一个某个事件，当前事件所在的完整事件序列将都会由这个view去处理，反应在真实的代码中，就是一旦view拦截了down事件，那么此后的move和up事件都将不调用onInterceptTouchEvent，而直接由它处理，这就也意味着在onInterceptTouchEvent处理事件是不合适的，因为有可能来了事件，却直接跳过onInterceptTouchEvent方法。这个也意味着，一旦一个ViewGroup没有拦截ACTION_DOWN，那么这个事件序列的其他Action，它都将收不到，所以在处理ACTION_DOWN的时候，尤其需要谨慎。
@@ -314,13 +314,13 @@ onTouchListener是在onTouch方法中生效，而且onTouch要先于onTouchEvent
 
 ### 12、9patch
 为什么叫9patch呢？Patch的中文意思是"片，块"的意思，那这里按中文的意思来说就是9片或9块.因此可想而知这个图片会被分为9片，如下图片所示:  
-![](images/12_9patch_1.png)  
+![](https://github.com/LeeeYou/Img/blob/master/fixmyproblem/12_9patch_1.png?raw=true)
 工具栏中的Show patches选中，中间紫色的区域就是拉伸区域。  
 工具栏中的Show content选中，看见蓝色的区域，这片区域就是显示内容的区域；比如说：这个图片宽有30px,我们把下面的那一条线的横向的第20px到25px画上了黑点，那么这个图片设置成某个组件的背景后，这个组件的paddingleft就会设置成20dp,paddingRight就会设置成5dp,如果再在布局文件里面设置这两个值，那个这里画的黑点就不起作用了。
 
 
 工具栏中的Show bad patches选中，可能会出现下图效果：  
-![](images/12_9patch_2.png)  
+![](https://github.com/LeeeYou/Img/blob/master/fixmyproblem/12_9patch_2.png?raw=true)
 其中被选中的3块不符合要求。这里它是根据什么来判断这个绘制的结果不符合要求呢？怎么就认为这三块不符合要求呢？它是根据左侧的黑色的小点所对过来的部分里面的每一个像素点的颜色是否一样。如果像素存在差异，当背景变大的时候就有两种颜色要被重复的绘制，系统就不知道到底绘制这两种颜色哪一种多一点，因此这个工具建议被拉伸的区域只能选择一种颜色。  
 
 如果对结果要求比较高的,右下角坐标显示区域就起作用了。
@@ -439,7 +439,7 @@ add 是把一个fragment添加到一个容器 container 里。
 这种方式有个值得注意的地方是切换到其他framgent时，并没有执行生命周期。❓
 
 与Activity生命周期的对比  
-![](images/13_fragment_lifecycle.png)
+![](https://github.com/LeeeYou/Img/blob/master/fixmyproblem//13_fragment_lifecycle.png?raw=true)
 
 对于replace和add方式的选择，官方文档解释说：replace()这个方法只是在上一个Fragment不再需要时采用的简便方法。正确的切换方式是add()，切换时hide()，add()另一个Fragment；再次切换时，只需hide()当前，show()另一个。这样就能做到多个Fragment切换不重新实例化。
 
@@ -502,7 +502,7 @@ public View getGroupView(final int groupPosition, boolean isExpanded, View conve
 
 **解决方案**：双层判断viewHolder==null，如果为null，需要再加载一次item_offical_game布局到convertView  
 
-![](images/16_expandlistview.png)
+![](https://github.com/LeeeYou/Img/blob/master/fixmyproblem/16_expandlistview.png?raw=true)
 
 ### 17、JSONArray ，JSONObject , json相互转换
 ```java
