@@ -2,8 +2,8 @@
 
 ### 1、ImageView的background和src的不同
 如果两个属性同时存在,用户会看到 src 属性中设置的背景. 但同时 background 设置的背景也存在, 只是被 src 属性挡住了,在后面. src 等于是前景, background 等于是背景.background 会根据 ImageView 组件给定的长宽进行拉伸, 而 src 就存放的是原图的大小, 不会进行拉伸。src 是图片内容（前景）, bg 是背景, 可以同时使用.此外: scaleType 只对 src 起作用,比如在 ImageView 中就可以用 android:scaleType 控制图片的缩放方式 ; bg 可设置透明度.
-![](images/01_img_src.png)
-![](images/01_img_background.png)
+![](https://github.com/LeeeYou/Img/blob/master/fixmyproblem/01_img_src.png?raw=true)
+![](https://github.com/LeeeYou/Img/blob/master/fixmyproblem/01_img_background.png?raw=true)
 
 ### 2、Glide加载圆形图和圆角图
 ```java
