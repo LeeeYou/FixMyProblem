@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.leeeyou.fixmyproblem.R;
+import com.example.leeeyou.fixmyproblem.model.bean.RoundUser;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -24,13 +25,42 @@ public class Problem10_JSONArray_Activity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jsonarray);
 
-        jsonStringTojsonObj();
-        jsonArrayTojsonObj();
-        jsonObjTojsonObj();
-        listobjTojsonArray();
+        jsonStringToJsonObj();
+        jsonArrayToJsonObj();
+        jsonObjToJsonObj();
+        listStringToJsonArray();
+        listObjToJsonArray();
     }
 
-    private void listobjTojsonArray() {
+    private void listObjToJsonArray() {
+        ArrayList<RoundUser> userList = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            RoundUser user = new RoundUser();
+            user.setAccount("account" + i);
+            user.setAge(20 + i);
+            user.setGender(i);
+            user.setIcon("https://uimg.quncaotech.com/dynamic/F2QYRR1423.jpg!/fwfh/1120x595/format/webp/quality/65/compress/true/strip/true");
+            user.setMobile("1536189040" + i);
+            user.setNick("nick" + i);
+            user.setRealName("realName" + i);
+            userList.add(user);
+        }
+
+        try {
+            JSONArray jsonArray = new JSONArray(new Gson().toJson(userList));
+
+            Log.e("com.jsonarray", "listObjToJsonArray ---- " + jsonArray.toString());
+
+            JSONArray jsonArray2 = new JSONArray(userList);
+            Log.e("com.jsonarray", "listObjToJsonArray 直接转换 ---- " + jsonArray2.toString());
+
+            Log.e("com.jsonarray", "-------------------- ");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void listStringToJsonArray() {
         List<String> imageList = new ArrayList<>();
         imageList.add("http://quncao-app.b0.upaiyun.com/51c1e24b6b821c916f732c2aa5b1dc9f.jpg");
         imageList.add("http://quncao-app.b0.upaiyun.com/8ad331112d30453d2ace4c31903c5c55.jpg");
@@ -40,10 +70,10 @@ public class Problem10_JSONArray_Activity extends BaseActivity {
         try {
             JSONArray jsonArray = new JSONArray(new Gson().toJson(imageList));
 
-            Log.e("com.jsonarray", "listobjTojsonArray Gson ---- " + jsonArray.toString());
+            Log.e("com.jsonarray", "listStringToJsonArray Gson ---- " + jsonArray.toString());
 
             JSONArray jsonArray2 = new JSONArray(imageList);
-            Log.e("com.jsonarray", "listobjTojsonArray 直接转换 ---- " + jsonArray2.toString());
+            Log.e("com.jsonarray", "listStringToJsonArray 直接转换 ---- " + jsonArray2.toString());
 
             Log.e("com.jsonarray", "-------------------- ");
         } catch (JSONException e) {
@@ -51,7 +81,7 @@ public class Problem10_JSONArray_Activity extends BaseActivity {
         }
     }
 
-    private void jsonObjTojsonObj() {
+    private void jsonObjToJsonObj() {
         JSONArray jsonArray = new JSONArray();
         jsonArray.put("http://quncao-app.b0.upaiyun.com/51c1e24b6b821c916f732c2aa5b1dc9f.jpg");
         jsonArray.put("http://quncao-app.b0.upaiyun.com/8ad331112d30453d2ace4c31903c5c55.jpg");
@@ -68,14 +98,14 @@ public class Problem10_JSONArray_Activity extends BaseActivity {
         }
 
         //直接调用toString可以将JSONObject转换成json字符串
-        Log.e("com.jsonarray", "jsonObjTojsonObj ---- " + jsonObject.toString());
+        Log.e("com.jsonarray", "jsonObjToJsonObj ---- " + jsonObject.toString());
 
-        Log.e("com.jsonarray", "jsonObjTojsonObj Gson ---- " + new Gson().toJson(jsonObject));
+        Log.e("com.jsonarray", "jsonObjToJsonObj Gson ---- " + new Gson().toJson(jsonObject));
 
         Log.e("com.jsonarray", "-------------------- ");
     }
 
-    private void jsonArrayTojsonObj() {
+    private void jsonArrayToJsonObj() {
         JSONArray jsonArray = new JSONArray();
         jsonArray.put("http://quncao-app.b0.upaiyun.com/51c1e24b6b821c916f732c2aa5b1dc9f.jpg");
         jsonArray.put("http://quncao-app.b0.upaiyun.com/8ad331112d30453d2ace4c31903c5c55.jpg");
@@ -83,22 +113,22 @@ public class Problem10_JSONArray_Activity extends BaseActivity {
         jsonArray.put("http://quncao-app.b0.upaiyun.com/369ca74245ebc32d512eae501e7de807.jpg");
 
         //直接调用toString可以将JSONArray转换成json字符串
-        Log.e("com.jsonarray", "jsonArrayTojsonObj ---- " + jsonArray.toString());
+        Log.e("com.jsonarray", "jsonArrayToJsonObj ---- " + jsonArray.toString());
 
         Log.e("com.jsonarray", "-------------------- ");
     }
 
-    private void jsonStringTojsonObj() {
+    private void jsonStringToJsonObj() {
         String imageObject = "{\"imageList\":[{\"id\": 292,\"imageUrl\": \"http://quncao-app.b0.upaiyun.com/51c1e24b6b821c916f732c2aa5b1dc9f.jpg\"},{\"id\": 289,\"imageUrl\": \"http://quncao-app.b0.upaiyun.com/8ad331112d30453d2ace4c31903c5c55.jpg\"},{\"id\": 288,\"imageUrl\": \"http://quncao-app.b0.upaiyun.com/839f7a8407047bab2d7a721c114912df.jpg\"},{\"id\": 291,\"imageUrl\": \"http://quncao-app.b0.upaiyun.com/369ca74245ebc32d512eae501e7de807.jpg\"}]}";
         FixedPrice fixedPrice = new Gson().fromJson(imageObject, FixedPrice.class);
-        Log.e("com.jsonarray", "jsonStringTojsonObj ---- " + fixedPrice.toString());
+        Log.e("com.jsonarray", "jsonStringToJsonObj ---- " + fixedPrice.toString());
 
         String imageArray = "[{\"id\": 292,\"imageUrl\": \"http://quncao-app.b0.upaiyun.com/51c1e24b6b821c916f732c2aa5b1dc9f.jpg\"},{\"id\": 289,\"imageUrl\": \"http://quncao-app.b0.upaiyun.com/8ad331112d30453d2ace4c31903c5c55.jpg\"},{\"id\": 288,\"imageUrl\": \"http://quncao-app.b0.upaiyun.com/839f7a8407047bab2d7a721c114912df.jpg\"},{\"id\": 291,\"imageUrl\": \"http://quncao-app.b0.upaiyun.com/369ca74245ebc32d512eae501e7de807.jpg\"}]";
         List<Image> imageList = new Gson().fromJson(imageArray, new TypeToken<List<Image>>() {
         }.getType());
 
-        Log.e("com.jsonarray", "jsonStringTojsonObj gson fromJson ---- " + fixedPrice.toString());
-        Log.e("com.jsonarray", "jsonStringTojsonObj TypeToken ---- " + imageList.toString());
+        Log.e("com.jsonarray", "jsonStringToJsonObj gson fromJson ---- " + fixedPrice.toString());
+        Log.e("com.jsonarray", "jsonStringToJsonObj TypeToken ---- " + imageList.toString());
 
         Log.e("com.jsonarray", "-------------------- ");
     }
