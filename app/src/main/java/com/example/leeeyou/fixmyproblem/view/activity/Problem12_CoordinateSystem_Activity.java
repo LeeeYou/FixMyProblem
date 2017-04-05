@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import com.example.leeeyou.fixmyproblem.R;
 
+/**
+ * 坐标体系
+ */
 public class Problem12_CoordinateSystem_Activity extends BaseActivity {
 
     TextView tv_desc1;
