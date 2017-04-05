@@ -36,7 +36,7 @@
         <activity android:name=".view.activity.coordinator.Step3Activity" />
         <activity android:name=".view.activity.coordinator.Step4Activity" />
         <activity android:name=".view.activity.coordinator.Step5Activity" />
-
+        <activity android:name=".view.activity.Problem12_CoordinateSystem_Activity"></activity>
     </application>
 
 </manifest>

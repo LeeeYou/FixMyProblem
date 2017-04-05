@@ -13,6 +13,7 @@
         <item>Problem09</item>
         <item>Problem10</item>
         <item>Problem11</item>
+        <item>Problem12</item>
     </string-array>
 
     <string-array name="index_title_desc">
@@ -27,6 +28,7 @@
         <item>09：ViewDrawHelper示例</item>
         <item>10：JSON的相互转换</item>
         <item>11：CoordinatorLayout示例</item>
+        <item>12：坐标体系</item>
     </string-array>
 
     <string-array name="status_bg_color">

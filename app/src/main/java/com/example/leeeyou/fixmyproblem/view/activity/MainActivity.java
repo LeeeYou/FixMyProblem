@@ -87,6 +87,9 @@ public class MainActivity extends BaseActivity {
                                 case 10:
                                     startActivity(new Intent(MainActivity.this, Problem11_CoordinatorLayout_Activity.class));
                                     break;
+                                case 11:
+                                    startActivity(new Intent(MainActivity.this, Problem12_CoordinateSystem_Activity.class));
+                                    break;
                             }
                         }
                     });
