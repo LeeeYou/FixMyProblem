@@ -56,16 +56,16 @@ public class OuterLayout extends LinearLayout {
         return super.dispatchTouchEvent(ev);
     }
 
-//    @Override
-//    public boolean onInterceptTouchEvent(MotionEvent ev) {
-//        Log.e("event dispatch", this.getClass().getSimpleName() + ".onInterceptTouchEvent");
-//        return true;
-//    }
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        Log.e("event dispatch", this.getClass().getSimpleName() + ".onInterceptTouchEvent");
+        return super.onInterceptTouchEvent(ev);
+    }
 
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event) {
-//        Log.e("event dispatch", this.getClass().getSimpleName() + ".onTouchEvent");
-//        return true;
-//    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.e("event dispatch", this.getClass().getSimpleName() + ".onTouchEvent");
+        return super.onTouchEvent(event);
+    }
 
 }

@@ -19,6 +19,7 @@
             android:layout_margin="10dp"
             android:background="@drawable/shape_corners_solid"
             android:gravity="center"
+            android:padding="10dp"
             android:text="默认EventBus实例post事件" />
 
         <Button
@@ -27,6 +28,7 @@
             android:layout_height="48dp"
             android:layout_margin="10dp"
             android:background="@drawable/shape_corners_stroke"
+            android:padding="10dp"
             android:text="注册自定义EventBus实例" />
 
         <Button
@@ -35,6 +37,7 @@
             android:layout_height="48dp"
             android:layout_margin="10dp"
             android:background="@drawable/shape_corners_stroke"
+            android:padding="10dp"
             android:text="自定义EventBus实例post粘性事件" />
 
         <Button
@@ -43,6 +46,7 @@
             android:layout_height="48dp"
             android:layout_margin="10dp"
             android:background="@drawable/shape_corners_stroke"
+            android:padding="10dp"
             android:text="注销自定义EventBus实例" />
 
     </LinearLayout>

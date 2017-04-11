@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.example.leeeyou.fixmyproblem.view.custom.OuterLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
+    android:layout_height="450dp"
     android:background="#80123bba"
     android:orientation="vertical"
     android:padding="10dp">
@@ -9,6 +9,7 @@
     <com.example.leeeyou.fixmyproblem.view.custom.InnerLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_marginTop="20dp"
         android:background="#872110"
         android:gravity="center_vertical"
         android:orientation="vertical">
@@ -17,10 +18,12 @@
             android:id="@+id/btn_1"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="30dp"
             android:background="@drawable/shape_corners_solid"
+            android:gravity="center"
             android:padding="15dp"
-            android:text="事件传递顺序体验" />
+            android:text="InnerLayout Button"
+            android:textColor="#ffffff" />
 
     </com.example.leeeyou.fixmyproblem.view.custom.InnerLayout>
 
@@ -28,8 +31,21 @@
         android:id="@+id/btn_2"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:layout_margin="10dp"
-        android:text="GesutureDetector"
-        android:textAllCaps="false" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="OuterLayout Button"
+        android:textAllCaps="false"
+        android:textColor="#ffffff" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_logcat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </ScrollView>
 
 </com.example.leeeyou.fixmyproblem.view.custom.OuterLayout>

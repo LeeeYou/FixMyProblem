@@ -3,6 +3,7 @@
     package="com.example.leeeyou.fixmyproblem">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
 
     <application
         android:allowBackup="true"

@@ -4,13 +4,13 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.widget.TextView;
+import android.widget.Button;
 
 /**
  * Created by leeeyou on 16/9/8.
  */
 
-public class MyButton extends TextView {
+public class MyButton extends Button {
     public MyButton(Context context) {
         super(context);
     }

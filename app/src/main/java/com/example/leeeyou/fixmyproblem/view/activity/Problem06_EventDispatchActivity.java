@@ -6,6 +6,10 @@ import android.widget.TextView;
 
 import com.example.leeeyou.fixmyproblem.R;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  * 事件传递
  */
@@ -13,6 +17,7 @@ public class Problem06_EventDispatchActivity extends BaseDefaultActivity {
 
     private TextView mBtn1;
     private TextView mBtn2;
+    private TextView tv_logcat;
 
     @Override
     public int getLayoutId() {
@@ -23,7 +28,6 @@ public class Problem06_EventDispatchActivity extends BaseDefaultActivity {
     public void initViews() {
         mBtn1 = findView(R.id.btn_1);
         mBtn2 = findView(R.id.btn_2);
-
     }
 
     @Override
@@ -37,6 +41,22 @@ public class Problem06_EventDispatchActivity extends BaseDefaultActivity {
         switch (v.getId()) {
             case R.id.btn_1:
                 Log.e("event dispatch", this.getClass().getSimpleName() + ".onClick");
+                break;
+            case R.id.btn_2:
+                try {
+                    Process process = Runtime.getRuntime().exec("logcat -d");
+                    BufferedReader bufferedReader = new BufferedReader(
+                            new InputStreamReader(process.getInputStream()));
+
+                    StringBuilder log = new StringBuilder();
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        log.append(line);
+                    }
+                    TextView tv = (TextView) findViewById(R.id.tv_logcat);
+                    tv.setText(log.toString());
+                } catch (IOException e) {
+                }
                 break;
         }
     }
