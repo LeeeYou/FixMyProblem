@@ -1,6 +1,5 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -12,28 +11,40 @@ import com.example.leeeyou.fixmyproblem.R;
  */
 public class Problem06_EventDispatchActivity extends BaseActivity {
 
+    private TextView mBtn1;
+    private TextView mBtn2;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_dispatch);
+    public int getLayoutId() {
+        return R.layout.activity_event_dispatch;
+    }
 
-        TextView btn_1 = (TextView) findViewById(R.id.btn_1);
-        btn_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e("event dispatch", this.getClass().getSimpleName() + ".onClick");
-            }
-        });
-
-        TextView btn_2 = (TextView) findViewById(R.id.btn_2);
-        btn_2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
+    @Override
+    public void initViews() {
+        mBtn1 = findView(R.id.btn_1);
+        mBtn2 = findView(R.id.btn_2);
 
     }
+
+    @Override
+    public void initListener() {
+        setOnClick(mBtn1);
+        setOnClick(mBtn2);
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void processClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_1:
+                Log.e("event dispatch", this.getClass().getSimpleName() + ".onClick");
+                break;
+        }
+    }
+
 }
 

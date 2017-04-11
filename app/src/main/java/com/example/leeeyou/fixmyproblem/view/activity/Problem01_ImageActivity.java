@@ -1,6 +1,6 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
-import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.example.leeeyou.fixmyproblem.R;
@@ -11,12 +11,29 @@ import com.example.leeeyou.fixmyproblem.R;
 public class Problem01_ImageActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image);
+    public int getLayoutId() {
+        return R.layout.activity_image;
+    }
+
+    @Override
+    public void initViews() {
         ImageView image4 = (ImageView) findViewById(R.id.image4);
         image4.setImageResource(R.mipmap.play_pk_pic);
     }
 
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void processClick(View v) {
+
+    }
 
 }

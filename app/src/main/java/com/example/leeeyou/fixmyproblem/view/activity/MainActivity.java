@@ -1,7 +1,6 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
@@ -13,42 +12,59 @@ import com.example.leeeyou.fixmyproblem.util.ViewHolder;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindArray;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class MainActivity extends BaseActivity {
 
-    @BindView(R.id.lv_index)
-    ListView lv_index;
+    ListView mListView;
 
-    @BindArray(R.array.index_title)
-    String[] index_title;
+    String[] mIndexTitleList;
+    String[] mIndexTitleDescList;
 
-    @BindArray(R.array.index_title_desc)
-    String[] index_title_desc;
-
-    UniversalAdapter<IndexView> adapter;
-    List<IndexView> dataList = new ArrayList<>();
+    UniversalAdapter<IndexView> mAdapter;
+    List<IndexView> mDataList = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
 
+    @Override
+    public void initViews() {
         setTitle("FixProblem");
-        initData();
+        mListView = findView(R.id.lv_index);
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+        mIndexTitleList = getResources().getStringArray(R.array.index_title);
+        mIndexTitleDescList = getResources().getStringArray(R.array.index_title_desc);
+
+        for (int i = 0; i < mIndexTitleList.length; i++) {
+            IndexView data = new IndexView();
+            data.setTitle(mIndexTitleList[i]);
+            data.setDesc(mIndexTitleDescList[i]);
+            mDataList.add(data);
+        }
+
         initAdapter();
     }
 
+    @Override
+    public void processClick(View v) {
+
+    }
+
     private void initAdapter() {
-        if (adapter == null) {
-            adapter = new UniversalAdapter<IndexView>(this, dataList, R.layout.item_index_activity) {
+        if (mAdapter == null) {
+            mAdapter = new UniversalAdapter<IndexView>(this, mDataList, R.layout.item_index_activity) {
                 @Override
                 public void convert(ViewHolder vh, IndexView item, final int position) {
-                    vh.setText(R.id.tv_title, dataList.get(position).getTitle());
-                    vh.setText(R.id.tv_title_desc, dataList.get(position).getDesc());
+                    vh.setText(R.id.tv_title, mDataList.get(position).getTitle());
+                    vh.setText(R.id.tv_title_desc, mDataList.get(position).getDesc());
 
                     vh.setOnClickListener(R.id.ll_item, new View.OnClickListener() {
                         @Override
@@ -96,16 +112,8 @@ public class MainActivity extends BaseActivity {
                 }
             };
         }
-        lv_index.setAdapter(adapter);
-    }
-
-    private void initData() {
-        for (int i = 0; i < index_title.length; i++) {
-            IndexView data = new IndexView();
-            data.setTitle(index_title[i]);
-            data.setDesc(index_title_desc[i]);
-            dataList.add(data);
-        }
+        mListView.setAdapter(mAdapter);
     }
 
 }
+

@@ -1,6 +1,6 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
-import android.os.Bundle;
+import android.view.View;
 
 import com.example.leeeyou.fixmyproblem.R;
 import com.google.gson.Gson;
@@ -14,15 +14,30 @@ import java.text.DecimalFormat;
 public class Problem08_Math_Activity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_math);
+    public int getLayoutId() {
+        return R.layout.activity_math;
+    }
 
+    @Override
+    public void initViews() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
         mathProcess();
-
         floatProcess();
-
         floatToJson();
+    }
+
+    @Override
+    public void processClick(View v) {
+
     }
 
     private void floatToJson() {

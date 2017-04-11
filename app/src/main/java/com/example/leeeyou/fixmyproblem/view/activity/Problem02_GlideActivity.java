@@ -7,7 +7,7 @@ import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -20,16 +20,32 @@ import com.example.leeeyou.fixmyproblem.R;
  */
 public class Problem02_GlideActivity extends BaseActivity {
 
+    private ImageView img01;
+    private ImageView img02;
+    private ImageView img03;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_glide);
+    public int getLayoutId() {
+        return R.layout.activity_glide;
+    }
 
-        String imageUrl = "http://7xptzi.com1.z0.glb.clouddn.com/19%E4%BA%91%E8%AF%BE%E5%A0%82_06.png";
+    @Override
+    public void initViews() {
+        img01 = findView(R.id.img01);
+        img02 = findView(R.id.img02);
+        img03 = findView(R.id.img03);
+    }
 
-        ImageView img01 = (ImageView) findViewById(R.id.img01);
-        ImageView img02 = (ImageView) findViewById(R.id.img02);
-        ImageView img03 = (ImageView) findViewById(R.id.img03);
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+        String imageUrl = "https://github.com/LeeeYou/Img/blob/master/leeeyou/getScrollX.png?raw=true";
+
+
         //Glide.with(this).load(imageUrl).thumbnail(0.1f).into(img01);
 
         // play gif
@@ -48,12 +64,16 @@ public class Problem02_GlideActivity extends BaseActivity {
                 .crossFade()
                 .transform(new GlideCircleTransform(this))
                 .into(img03);
+    }
+
+    @Override
+    public void processClick(View v) {
 
     }
 
     public class GlideCircleTransform extends BitmapTransformation {
 
-        public GlideCircleTransform(Context context) {
+        GlideCircleTransform(Context context) {
             super(context);
         }
 
@@ -98,11 +118,11 @@ public class Problem02_GlideActivity extends BaseActivity {
 
         private float radius = 0f;
 
-        public GlideRoundTransform(Context context) {
+        GlideRoundTransform(Context context) {
             this(context, 4);
         }
 
-        public GlideRoundTransform(Context context, int dp) {
+        GlideRoundTransform(Context context, int dp) {
             super(context);
             this.radius = Resources.getSystem().getDisplayMetrics().density * dp;
         }

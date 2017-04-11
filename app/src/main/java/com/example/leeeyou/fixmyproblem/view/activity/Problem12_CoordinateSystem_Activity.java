@@ -1,14 +1,16 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
 import android.graphics.Rect;
-import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.example.leeeyou.fixmyproblem.R;
+
+import static com.example.leeeyou.fixmyproblem.R.id.webView;
 
 /**
  * 坐标体系
@@ -16,20 +18,36 @@ import com.example.leeeyou.fixmyproblem.R;
 public class Problem12_CoordinateSystem_Activity extends BaseActivity {
 
     TextView mTv;
+    WebView mWebView;
     StringBuilder mStringBuilder = new StringBuilder();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_problem12_coordinate_system);
+    public int getLayoutId() {
+        return R.layout.activity_problem12_coordinate_system;
+    }
 
-        mTv = (TextView) findViewById(R.id.tv_desc1);
+    @Override
+    public void initViews() {
+        mTv = findView(R.id.tv_desc1);
+        mWebView = findView(webView);
+    }
 
-        WebView webView = (WebView) findViewById(R.id.webView);
-        WebSettings settings = webView.getSettings();
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+        WebSettings settings = mWebView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        webView.loadUrl("http://leeeyou.xyz/2016/01/22/blog-2016-01-22-Android%E5%BC%80%E5%8F%91%E4%B8%AD%E5%BF%85%E5%A4%87%E7%9A%84%E5%9D%90%E6%A0%87%E4%BD%93%E7%B3%BB%E7%9F%A5%E8%AF%86/");
+        mWebView.loadUrl("http://leeeyou.xyz/2016/01/22/blog-2016-01-22-Android%E5%BC%80%E5%8F%91%E4%B8%AD%E5%BF%85%E5%A4%87%E7%9A%84%E5%9D%90%E6%A0%87%E4%BD%93%E7%B3%BB%E7%9F%A5%E8%AF%86/");
+    }
+
+    @Override
+    public void processClick(View v) {
+
     }
 
     @Override

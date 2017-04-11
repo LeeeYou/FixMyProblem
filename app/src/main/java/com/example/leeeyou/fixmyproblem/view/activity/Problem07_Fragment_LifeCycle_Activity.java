@@ -1,6 +1,5 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
-import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
@@ -18,13 +17,29 @@ public class Problem07_Fragment_LifeCycle_Activity extends BaseActivity {
     private FragmentTransaction fragmentTransaction;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment_life_cycle);
+    public int getLayoutId() {
+        return R.layout.activity_fragment_life_cycle;
+    }
 
+    @Override
+    public void initViews() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
 //        replaceWay();
-
         addWay();
+    }
+
+    @Override
+    public void processClick(View v) {
+
     }
 
     /* replace方式 观察fragment生命周期 */

@@ -1,7 +1,7 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
-import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 import com.example.leeeyou.fixmyproblem.R;
 import com.example.leeeyou.fixmyproblem.view.fragment.PageFragment;
@@ -15,25 +15,42 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
  */
 public class Problem03_SlidingConflictActivity extends BaseActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sliding_conflict);
+    private ViewPager mViewPager;
+    private SmartTabLayout mViewPagerTab;
 
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_sliding_conflict;
+    }
+
+    @Override
+    public void initViews() {
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPagerTab = (SmartTabLayout) findViewById(R.id.viewpagertab);
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
                 .add("title_A", PageFragment.class)
-                .add("title_B", PageFragment.class)
-                .add("title_C", PageFragment.class)
+                .add("title_B", PageSlidingConflictFragment.class)
+                .add("title_c", PageFragment.class)
                 .add("title_D", PageFragment.class)
-                .add("title_E", PageSlidingConflictFragment.class)
                 .create());
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        viewPager.setAdapter(adapter);
+        mViewPager.setAdapter(adapter);
+        mViewPagerTab.setViewPager(mViewPager);
+    }
 
-        SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.viewpagertab);
-        viewPagerTab.setViewPager(viewPager);
+    @Override
+    public void processClick(View v) {
+
     }
 
 }

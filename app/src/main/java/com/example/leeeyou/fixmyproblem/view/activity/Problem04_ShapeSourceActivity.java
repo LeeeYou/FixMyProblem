@@ -1,6 +1,6 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
-import android.os.Bundle;
+import android.view.View;
 
 import com.example.leeeyou.fixmyproblem.R;
 import com.example.leeeyou.fixmyproblem.event.MessageEvent;
@@ -26,11 +26,28 @@ import org.greenrobot.eventbus.EventBus;
 public class Problem04_ShapeSourceActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shape_source);
+    public int getLayoutId() {
+        return R.layout.activity_shape_source;
+    }
 
+    @Override
+    public void initViews() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
         EventBus.getDefault().postSticky("");
+    }
+
+    @Override
+    public void processClick(View v) {
+
     }
 
     @Override

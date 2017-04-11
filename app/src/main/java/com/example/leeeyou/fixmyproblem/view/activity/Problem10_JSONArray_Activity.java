@@ -1,7 +1,7 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
-import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.example.leeeyou.fixmyproblem.R;
 import com.example.leeeyou.fixmyproblem.model.bean.RoundUser;
@@ -21,15 +21,32 @@ import java.util.List;
 public class Problem10_JSONArray_Activity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jsonarray);
+    public int getLayoutId() {
+        return R.layout.activity_jsonarray;
+    }
 
+    @Override
+    public void initViews() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
         jsonStringToJsonObj();
         jsonArrayToJsonObj();
         jsonObjToJsonObj();
         listStringToJsonArray();
         listObjToJsonArray();
+    }
+
+    @Override
+    public void processClick(View v) {
+
     }
 
     private void listObjToJsonArray() {

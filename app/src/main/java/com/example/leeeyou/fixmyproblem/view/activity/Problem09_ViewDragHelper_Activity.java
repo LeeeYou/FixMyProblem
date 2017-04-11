@@ -1,6 +1,6 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
-import android.os.Bundle;
+import android.view.View;
 
 import com.example.leeeyou.fixmyproblem.R;
 
@@ -10,9 +10,28 @@ import com.example.leeeyou.fixmyproblem.R;
 public class Problem09_ViewDragHelper_Activity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_viewdragerhelper);
+    public int getLayoutId() {
+        return R.layout.activity_viewdragerhelper;
+    }
+
+    @Override
+    public void initViews() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void processClick(View v) {
+
     }
 
 }
