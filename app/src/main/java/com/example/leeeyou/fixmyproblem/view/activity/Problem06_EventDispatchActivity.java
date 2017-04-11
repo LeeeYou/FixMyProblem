@@ -9,7 +9,7 @@ import com.example.leeeyou.fixmyproblem.R;
 /**
  * 事件传递
  */
-public class Problem06_EventDispatchActivity extends BaseActivity {
+public class Problem06_EventDispatchActivity extends BaseDefaultActivity {
 
     private TextView mBtn1;
     private TextView mBtn2;
@@ -30,11 +30,6 @@ public class Problem06_EventDispatchActivity extends BaseActivity {
     public void initListener() {
         setOnClick(mBtn1);
         setOnClick(mBtn2);
-    }
-
-    @Override
-    public void initData() {
-
     }
 
     @Override

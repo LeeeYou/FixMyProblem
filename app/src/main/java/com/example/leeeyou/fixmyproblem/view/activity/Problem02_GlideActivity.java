@@ -7,7 +7,6 @@ import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -18,7 +17,7 @@ import com.example.leeeyou.fixmyproblem.R;
 /**
  * Glide 做圆形图片和圆角图片
  */
-public class Problem02_GlideActivity extends BaseActivity {
+public class Problem02_GlideActivity extends BaseDefaultActivity {
 
     private ImageView img01;
     private ImageView img02;
@@ -34,11 +33,6 @@ public class Problem02_GlideActivity extends BaseActivity {
         img01 = findView(R.id.img01);
         img02 = findView(R.id.img02);
         img03 = findView(R.id.img03);
-    }
-
-    @Override
-    public void initListener() {
-
     }
 
     @Override
@@ -64,11 +58,6 @@ public class Problem02_GlideActivity extends BaseActivity {
                 .crossFade()
                 .transform(new GlideCircleTransform(this))
                 .into(img03);
-    }
-
-    @Override
-    public void processClick(View v) {
-
     }
 
     public class GlideCircleTransform extends BitmapTransformation {

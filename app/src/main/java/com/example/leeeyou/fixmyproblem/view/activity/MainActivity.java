@@ -12,7 +12,7 @@ import com.example.leeeyou.fixmyproblem.util.ViewHolder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseDefaultActivity {
 
     ListView mListView;
 
@@ -34,11 +34,6 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    public void initListener() {
-
-    }
-
-    @Override
     public void initData() {
         mIndexTitleList = getResources().getStringArray(R.array.index_title);
         mIndexTitleDescList = getResources().getStringArray(R.array.index_title_desc);
@@ -51,11 +46,6 @@ public class MainActivity extends BaseActivity {
         }
 
         initAdapter();
-    }
-
-    @Override
-    public void processClick(View v) {
-
     }
 
     private void initAdapter() {

@@ -11,6 +11,9 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+/**
+ * 基类 - 处理开发流程相关的问题
+ */
 public abstract class BaseActivity extends BaseStyleActivity implements View.OnClickListener {
     private SparseArray<View> mViews;
 

@@ -10,7 +10,7 @@ import com.example.leeeyou.fixmyproblem.view.fragment.LifeCycle02Fragment;
 /**
  * fragment生命周期
  */
-public class Problem07_Fragment_LifeCycle_Activity extends BaseActivity {
+public class Problem07_Fragment_LifeCycle_Activity extends BaseDefaultActivity {
 
     private LifeCycle01Fragment lifeCycle01Fragment;
     private LifeCycle02Fragment lifeCycle02Fragment;
@@ -22,24 +22,9 @@ public class Problem07_Fragment_LifeCycle_Activity extends BaseActivity {
     }
 
     @Override
-    public void initViews() {
-
-    }
-
-    @Override
-    public void initListener() {
-
-    }
-
-    @Override
     public void initData() {
 //        replaceWay();
         addWay();
-    }
-
-    @Override
-    public void processClick(View v) {
-
     }
 
     /* replace方式 观察fragment生命周期 */

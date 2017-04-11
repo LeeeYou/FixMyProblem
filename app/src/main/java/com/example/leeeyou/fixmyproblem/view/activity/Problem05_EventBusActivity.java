@@ -18,7 +18,7 @@ import org.greenrobot.eventbus.ThreadMode;
  * 1 两个EventBus实例各自发送消息
  * 2 EventBus粘性事件的使用场景
  */
-public class Problem05_EventBusActivity extends BaseActivity {
+public class Problem05_EventBusActivity extends BaseDefaultActivity {
 
     private EventBus mNewEventBus;
     private Button mBtnPost1;

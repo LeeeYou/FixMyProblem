@@ -1,7 +1,6 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
 import android.support.v4.view.ViewPager;
-import android.view.View;
 
 import com.example.leeeyou.fixmyproblem.R;
 import com.example.leeeyou.fixmyproblem.view.fragment.PageFragment;
@@ -13,7 +12,7 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 /**
  * 事件冲突案例
  */
-public class Problem03_SlidingConflictActivity extends BaseActivity {
+public class Problem03_SlidingConflictActivity extends BaseDefaultActivity {
 
     private ViewPager mViewPager;
     private SmartTabLayout mViewPagerTab;
@@ -30,11 +29,6 @@ public class Problem03_SlidingConflictActivity extends BaseActivity {
     }
 
     @Override
-    public void initListener() {
-
-    }
-
-    @Override
     public void initData() {
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
@@ -46,11 +40,6 @@ public class Problem03_SlidingConflictActivity extends BaseActivity {
 
         mViewPager.setAdapter(adapter);
         mViewPagerTab.setViewPager(mViewPager);
-    }
-
-    @Override
-    public void processClick(View v) {
-
     }
 
 }

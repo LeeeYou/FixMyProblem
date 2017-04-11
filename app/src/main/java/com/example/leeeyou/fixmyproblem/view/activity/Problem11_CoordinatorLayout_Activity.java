@@ -11,7 +11,7 @@ import com.example.leeeyou.fixmyproblem.view.activity.coordinator.Step3Activity;
 import com.example.leeeyou.fixmyproblem.view.activity.coordinator.Step4Activity;
 import com.example.leeeyou.fixmyproblem.view.activity.coordinator.Step5Activity;
 
-public class Problem11_CoordinatorLayout_Activity extends BaseActivity {
+public class Problem11_CoordinatorLayout_Activity extends BaseDefaultActivity {
 
 
     private Button btn_01;
@@ -41,10 +41,6 @@ public class Problem11_CoordinatorLayout_Activity extends BaseActivity {
         setOnClick(btn_03);
         setOnClick(btn_04);
         setOnClick(btn_05);
-    }
-
-    @Override
-    public void initData() {
     }
 
     @Override

@@ -14,6 +14,9 @@ import com.example.leeeyou.fixmyproblem.R;
 
 import qiu.niorgai.StatusBarCompat;
 
+/**
+ * 基类 - 处理样式相关的问题
+ */
 public class BaseStyleActivity extends AppCompatActivity {
     private LinearLayout contentLayout;
     private Toolbar toolbar;

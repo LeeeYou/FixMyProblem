@@ -1,7 +1,5 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
-import android.view.View;
-
 import com.example.leeeyou.fixmyproblem.R;
 import com.example.leeeyou.fixmyproblem.event.MessageEvent;
 
@@ -23,7 +21,7 @@ import org.greenrobot.eventbus.EventBus;
  * <p>
  * 带按下效果的圆角框
  */
-public class Problem04_ShapeSourceActivity extends BaseActivity {
+public class Problem04_ShapeSourceActivity extends BaseDefaultActivity {
 
     @Override
     public int getLayoutId() {
@@ -31,23 +29,8 @@ public class Problem04_ShapeSourceActivity extends BaseActivity {
     }
 
     @Override
-    public void initViews() {
-
-    }
-
-    @Override
-    public void initListener() {
-
-    }
-
-    @Override
     public void initData() {
         EventBus.getDefault().postSticky("");
-    }
-
-    @Override
-    public void processClick(View v) {
-
     }
 
     @Override

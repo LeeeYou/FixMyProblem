@@ -1,7 +1,5 @@
 package com.example.leeeyou.fixmyproblem.view.activity;
 
-import android.view.View;
-
 import com.example.leeeyou.fixmyproblem.R;
 import com.google.gson.Gson;
 
@@ -11,7 +9,7 @@ import java.text.DecimalFormat;
 /**
  * Math中小数的处理
  */
-public class Problem08_Math_Activity extends BaseActivity {
+public class Problem08_Math_Activity extends BaseDefaultActivity {
 
     @Override
     public int getLayoutId() {
@@ -19,25 +17,10 @@ public class Problem08_Math_Activity extends BaseActivity {
     }
 
     @Override
-    public void initViews() {
-
-    }
-
-    @Override
-    public void initListener() {
-
-    }
-
-    @Override
     public void initData() {
         mathProcess();
         floatProcess();
         floatToJson();
-    }
-
-    @Override
-    public void processClick(View v) {
-
     }
 
     private void floatToJson() {
