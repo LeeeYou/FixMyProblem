@@ -4,6 +4,8 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.example.leeeyou.fixmyproblem.R;
@@ -13,7 +15,7 @@ import com.example.leeeyou.fixmyproblem.R;
  */
 public class Problem12_CoordinateSystem_Activity extends BaseActivity {
 
-    TextView tv_desc1;
+    TextView mTv;
     StringBuilder mStringBuilder = new StringBuilder();
 
     @Override
@@ -21,18 +23,25 @@ public class Problem12_CoordinateSystem_Activity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problem12_coordinate_system);
 
-        tv_desc1 = (TextView) findViewById(R.id.tv_desc1);
+        mTv = (TextView) findViewById(R.id.tv_desc1);
 
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        Log.d("xxx", "屏幕高度" + metrics.heightPixels + "；屏幕宽度" + metrics.widthPixels);
-
-        mStringBuilder.append("屏幕高度").append(metrics.heightPixels).append(";").append("屏幕宽度").append(metrics.widthPixels).append("\n");
+        WebView webView = (WebView) findViewById(R.id.webView);
+        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        webView.loadUrl("http://leeeyou.xyz/2016/01/22/blog-2016-01-22-Android%E5%BC%80%E5%8F%91%E4%B8%AD%E5%BF%85%E5%A4%87%E7%9A%84%E5%9D%90%E6%A0%87%E4%BD%93%E7%B3%BB%E7%9F%A5%E8%AF%86/");
     }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        Log.d("xxx", "屏幕高度" + metrics.heightPixels + "；屏幕宽度" + metrics.widthPixels);
+
+        mStringBuilder.setLength(0);
+        mStringBuilder.append("屏幕高度").append(metrics.heightPixels).append(";").append("屏幕宽度").append(metrics.widthPixels).append("\n");
 
         Rect rect = new Rect();
         getWindow().getDecorView().getWindowVisibleDisplayFrame(rect);
@@ -43,7 +52,7 @@ public class Problem12_CoordinateSystem_Activity extends BaseActivity {
         mStringBuilder.append("app内容区域高度").append(rect.height()).append(";").append("app内容区域宽度").append(rect.width()).append("\n");
         mStringBuilder.append("状态栏高度").append(rect.top).append(";").append("状态栏宽度").append(rect.right).append("\n");
 
-        tv_desc1.setText(mStringBuilder.toString());
+        mTv.setText(mStringBuilder.toString());
     }
 
 }
