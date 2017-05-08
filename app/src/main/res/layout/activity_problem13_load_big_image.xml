@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_problem13__load_big_image_"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.leeeyou.fixmyproblem.view.activity.Problem13_LoadBigImageActivity">
+    android:orientation="vertical">
 
-
-    <com.example.leeeyou.fixmyproblem.view.custom.BigImageView
-        android:id="@+id/bigImageView"
+    <Button
+        android:id="@+id/btn_big_img_01"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="55dp"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        android:text="LoadBigImgByBitmapRegion"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btn_big_img_02"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        android:text="LoadBigImgBySurfaceView"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
+
+</LinearLayout>

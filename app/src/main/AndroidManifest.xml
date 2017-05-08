@@ -38,7 +38,9 @@
         <activity android:name=".view.activity.coordinator.Step4Activity" />
         <activity android:name=".view.activity.coordinator.Step5Activity" />
         <activity android:name=".view.activity.Problem12_CoordinateSystemActivity" />
-        <activity android:name=".view.activity.Problem13_LoadBigImageActivity"></activity>
+        <activity android:name=".view.activity.Problem13_LoadBigImageActivity" />
+        <activity android:name=".view.activity.loadbigimg.LoadBigImageBySurfaceViewActivity" />
+        <activity android:name=".view.activity.loadbigimg.LoadBigImageByBitmapRegionActivity" />
     </application>
 
 </manifest>
