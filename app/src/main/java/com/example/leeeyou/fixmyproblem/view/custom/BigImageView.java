@@ -10,6 +10,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.example.leeeyou.fixmyproblem.util.gesture.MoveGestureDetector;
+
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -27,12 +29,38 @@ public class BigImageView extends View {
 
     private int downX, downY;
 
+    private MoveGestureDetector mDetector;
+
     static {
         mOption.inPreferredConfig = Bitmap.Config.RGB_565;
     }
 
     public BigImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init();
+    }
+
+    private void init() {
+        mDetector = new MoveGestureDetector(new MoveGestureDetector.SimpleMoveGestureDetector() {
+            @Override
+            public boolean onMove(MoveGestureDetector detector) {
+                int moveX = (int) detector.getMoveX();
+                int moveY = (int) detector.getMoveY();
+
+                if (mImageWidth > getWidth()) {
+                    mRect.offset(-moveX, 0);
+                    checkWidth();
+                    invalidate();
+                }
+                if (mImageHeight > getHeight()) {
+                    mRect.offset(0, -moveY);
+                    checkHeight();
+                    invalidate();
+                }
+
+                return true;
+            }
+        });
     }
 
     public void setImageInputStream(InputStream is) {
@@ -83,34 +111,40 @@ public class BigImageView extends View {
         canvas.drawBitmap(bitmap, 0, 0, null);
     }
 
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        switch (event.getAction()) {
+//            case MotionEvent.ACTION_DOWN:
+//                downX = (int) event.getX();
+//                downY = (int) event.getY();
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                int dx = (int) (downX - event.getX());
+//                int dy = (int) (downY - event.getY());
+//
+//                if (mImageWidth > getWidth()) {
+//                    mRect.offset(dx, 0);
+//                    checkWidth();
+//                    invalidate();
+//                }
+//
+//                if (mImageHeight > getHeight()) {
+//                    mRect.offset(0, dy);
+//                    checkHeight();
+//                    invalidate();
+//                }
+//
+//                break;
+//            case MotionEvent.ACTION_UP:
+//                break;
+//        }
+//        return true;
+//    }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                downX = (int) event.getRawX();
-                downY = (int) event.getRawY();
-                break;
-            case MotionEvent.ACTION_MOVE:
-                int dx = (int) (downX - event.getRawX());
-                int dy = (int) (downY - event.getRawY());
-
-                if (mImageWidth > getWidth()) {
-                    mRect.offset(dx, 0);
-                    checkWidth();
-                    invalidate();
-                }
-
-                if (mImageHeight > getHeight()) {
-                    mRect.offset(0, dy);
-                    checkHeight();
-                    invalidate();
-                }
-
-                break;
-            case MotionEvent.ACTION_UP:
-                break;
-        }
+        mDetector.onTouchEvent(event);
         return true;
     }
 
