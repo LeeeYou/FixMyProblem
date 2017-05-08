@@ -6,7 +6,7 @@ import com.example.leeeyou.fixmyproblem.view.custom.BigImageView;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class Problem13LoadBigImageActivity extends BaseDefaultActivity {
+public class Problem13_LoadBigImageActivity extends BaseDefaultActivity {
 
     @Override
     public int getLayoutId() {

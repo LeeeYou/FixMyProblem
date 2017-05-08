@@ -14,7 +14,7 @@ import static com.example.leeeyou.fixmyproblem.R.id.webView;
 /**
  * 坐标体系
  */
-public class Problem12CoordinateSystemActivity extends BaseDefaultActivity {
+public class Problem12_CoordinateSystemActivity extends BaseDefaultActivity {
 
     TextView mTv;
     WebView mWebView;

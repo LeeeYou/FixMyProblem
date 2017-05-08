@@ -94,10 +94,10 @@ public class MainActivity extends BaseDefaultActivity {
                                     startActivity(new Intent(MainActivity.this, Problem11_CoordinatorLayout_Activity.class));
                                     break;
                                 case 11:
-                                    startActivity(new Intent(MainActivity.this, Problem12CoordinateSystemActivity.class));
+                                    startActivity(new Intent(MainActivity.this, Problem12_CoordinateSystemActivity.class));
                                     break;
                                 case 12:
-                                    startActivity(new Intent(MainActivity.this, Problem13LoadBigImageActivity.class));
+                                    startActivity(new Intent(MainActivity.this, Problem13_LoadBigImageActivity.class));
                                     break;
                             }
                         }

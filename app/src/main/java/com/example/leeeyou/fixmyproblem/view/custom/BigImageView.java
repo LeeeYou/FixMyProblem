@@ -88,12 +88,12 @@ public class BigImageView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                downX = (int) event.getX();
-                downY = (int) event.getY();
+                downX = (int) event.getRawX();
+                downY = (int) event.getRawY();
                 break;
             case MotionEvent.ACTION_MOVE:
-                int dx = (int) (downX - event.getX());
-                int dy = (int) (downY - event.getY());
+                int dx = (int) (downX - event.getRawX());
+                int dy = (int) (downY - event.getRawY());
 
                 if (mImageWidth > getWidth()) {
                     mRect.offset(dx, 0);
